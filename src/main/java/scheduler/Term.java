@@ -1,4 +1,4 @@
-
+package scheduler;
 /**
  * Represents a term (Fall, Spring, Summer).
  *
