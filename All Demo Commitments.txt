@@ -1,0 +1,26 @@
+Demo 1:
+	Parser
+	Maven
+Demo 2:
+	Java Entities:
+		Section
+		Student
+		Professor
+	SQL Entities:
+		Section
+		Student
+		Professor
+Demo 3:
+	SQL Queries
+Demo 4:
+	Java Module interact w/ database
+	Java Module gather output
+	UI Module
+Final:
+	input:
+		specific course they want to move
+	output:
+		top 5 choices
+		- time
+		- place
+		- list?
