@@ -17,29 +17,33 @@ public class ParserSteps
     static String[] tokens;
 
     @Given("^the file \"([^\"]*)\" to parse$")
-    public void theFileToParse(String fileName) throws Throwable {
-
+    public void theFileToParse(String fileName) throws Throwable
+    {
         ClassLoader classLoader = getClass().getClassLoader();
         fileString = IOUtils.toString(classLoader.getResourceAsStream(fileName));
     }
 
     @When("^I request line (\\d+) of the file$")
-    public void iRequestLineOfTheFile(int line) throws Throwable {
+    public void iRequestLineOfTheFile(int line) throws Throwable
+    {
         Scanner scan = new Scanner(fileString);
 
+        // identify the desired row
         for (int count = 1; count <= line; ++count)
             row = scan.nextLine();
     }
 
     @Then("^I receive the string values:$")
-    public void iReceiveTheStringValues(DataTable values) throws Throwable {
+    public void iReceiveTheStringValues(DataTable values) throws Throwable
+    {
+        // parse the row
         tokens = Parser.parseRow(row);
-        List<String> column = values.raw().get(0);
-        String[] correctTokens = new String[values.raw().size()];
-        for (int index = 0; index < correctTokens.length; ++index) {
-            correctTokens[index] = values.raw().get(index).get(0);
-        }
-        // System.out.println("PRINT HERE: " + column.get(0));
+
+        // get the correct values
+        List<String> record = values.raw().get(0);
+        String[] correctTokens = record.toArray(new String[record.size()]);
+
+        // compare the parsed row to the correct values
         assertArrayEquals(correctTokens, tokens);
     }
 }

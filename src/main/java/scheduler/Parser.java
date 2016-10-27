@@ -36,9 +36,6 @@ public class Parser
         char clause = '"';          // the character used to designate a field, which may include delimeters
         char escape = '"';          // the character used to escape a special character
 
-        // prepare for the first iteration
-        startPoint = 0;
-
         // parse each character in the line
         for (int index = 0; index < row.length; ++index)
         {
@@ -61,7 +58,6 @@ public class Parser
 
                     token.clear();                          // begin a new token
                     result.add(completeToken.toString());   // add the new token
-                    startPoint = index + 1;                 // start point for next token
 
                     delimOn = true;     // end a clause
                 }
@@ -84,6 +80,10 @@ public class Parser
                 }
                 else if (row[index] == delim || index == row.length - 1)
                 {
+                    // finish final token
+                    if (index == row.length - 1)
+                        token.add(row[index]);
+
                     StringBuilder completeToken = new StringBuilder();
 
                     for (char character : token)
@@ -93,7 +93,6 @@ public class Parser
 
                     token.clear();                          // begin a new token
                     result.add(completeToken.toString());   // add the new token
-                    startPoint = index + 1;                 // start point for next token
                 }
                 else
                 {
@@ -131,9 +130,6 @@ public class Parser
         char delim = delimeter;     // the character used to separate tokens
         char escape = '"';          // the character used to escape a clause character
         char clause = '"';          // the character used to designate a field, which may include delimeters
-        
-        // prepare for the first iteration
-        startPoint = 0;
 
         // parse each character in the line
         for (int index = 0; index < row.length; ++index)
@@ -157,7 +153,6 @@ public class Parser
 
                     token.clear();                          // begin a new token
                     result.add(completeToken.toString());   // add the new token
-                    startPoint = index + 1;                 // start point for next token
 
                     delimOn = true;     // end a clause
                 }
@@ -180,6 +175,10 @@ public class Parser
                 }
                 else if (row[index] == delim || index == row.length - 1)
                 {
+                    // finish final token
+                    if (index == row.length - 1)
+                        token.add(row[index]);
+
                     StringBuilder completeToken = new StringBuilder();
 
                     for (char character : token)
@@ -189,7 +188,6 @@ public class Parser
 
                     token.clear();                          // begin a new token
                     result.add(completeToken.toString());   // add the new token
-                    startPoint = index + 1;                 // start point for next token
                 }
                 else
                 {
@@ -230,9 +228,6 @@ public class Parser
         char escape = esc;          // the character used to escape a clause character
         char clause = '"';          // the character used to designate a field, which may include delimeters
 
-        // prepare for the first iteration
-        startPoint = 0;
-
         // parse each character in the line
         for (int index = 0; index < row.length; ++index)
         {
@@ -255,7 +250,6 @@ public class Parser
 
                     token.clear();                          // begin a new token
                     result.add(completeToken.toString());   // add the new token
-                    startPoint = index + 1;                 // start point for next token
 
                     delimOn = true;     // end a clause
                 }
@@ -278,6 +272,10 @@ public class Parser
                 }
                 else if (row[index] == delim || index == row.length - 1)
                 {
+                    // finish final token
+                    if (index == row.length - 1)
+                        token.add(row[index]);
+
                     StringBuilder completeToken = new StringBuilder();
 
                     for (char character : token)
@@ -287,7 +285,6 @@ public class Parser
 
                     token.clear();                          // begin a new token
                     result.add(completeToken.toString());   // add the new token
-                    startPoint = index + 1;                 // start point for next token
                 }
                 else
                 {
@@ -328,9 +325,6 @@ public class Parser
         char delim = delimeter;     // the character used to separate tokens
         char escape = esc;          // the character used to escape a clause character
         char clause = cls;          // the character used to designate a field, which may include delimeters
-        
-        // prepare for the first iteration
-        startPoint = 0;
 
         // parse each character in the line
         for (int index = 0; index < row.length; ++index)
@@ -354,7 +348,6 @@ public class Parser
 
                     token.clear();                          // begin a new token
                     result.add(completeToken.toString());   // add the new token
-                    startPoint = index + 1;                 // start point for next token
 
                     delimOn = true;     // end a clause
                 }
@@ -377,6 +370,10 @@ public class Parser
                 }
                 else if (row[index] == delim || index == row.length - 1)
                 {
+                    // finish final token
+                    if (index == row.length - 1)
+                        token.add(row[index]);
+
                     StringBuilder completeToken = new StringBuilder();
 
                     for (char character : token)
@@ -386,7 +383,6 @@ public class Parser
 
                     token.clear();                          // begin a new token
                     result.add(completeToken.toString());   // add the new token
-                    startPoint = index + 1;                 // start point for next token
                 }
                 else
                 {
@@ -399,4 +395,3 @@ public class Parser
         return result.toArray(new String[result.size()]);
     }
 }
-

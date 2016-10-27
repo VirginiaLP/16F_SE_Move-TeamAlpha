@@ -1,1 +1,4 @@
-Kevin,Isaak,Virginia 
+Kevin,Isaak,Virginia
+"Blee","Blah","Blue"
+"A quote: "" was escaped","another value","a third value"
+"A delimeter: , was ignored","another value","a third value"
