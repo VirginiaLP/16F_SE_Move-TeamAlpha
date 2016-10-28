@@ -1,2 +1,4 @@
-RunCukesTest.class
+scheduler/StudentSteps.class
 scheduler/ParserSteps.class
+scheduler/ProfessorSteps.class
+RunCukesTest.class

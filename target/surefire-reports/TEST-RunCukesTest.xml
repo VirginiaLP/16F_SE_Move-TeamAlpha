@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="13" failures="0" name="RunCukesTest" time="0.279" errors="0" skipped="0">
+<testsuite tests="41" failures="0" name="RunCukesTest" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -39,11 +39,10 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="user.name" value="kevin"/>
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
-    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="error"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -q clean test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -61,17 +60,45 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 1 of the file" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 2 of the file" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 3 of the file" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 4 of the file" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
-  <testcase classname="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Scenario: The parse successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 1 of the file" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 2 of the file" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 3 of the file" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 4 of the file" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s first name" name="Given there is a professor with the first name \&quot;Brent\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s first name" name="When I ask for the professor\&apos;s first name" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s first name" name="Then I receive the string \&quot;Brent\&quot; from the professor" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s first name" name="Scenario: System asks for a professor\&apos;s first name" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s last name" name="Given there is a professor with the last name \&quot;Reeves\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s last name" name="When I ask for the professor\&apos;s last name" time="0.001"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s last name" name="Then I receive the string \&quot;Reeves\&quot; from the professor" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s last name" name="Scenario: System asks for a professor\&apos;s last name" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="Given there is a professor with the following sections:" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="When I ask for the professor\&apos;s sections" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="Then I receive this set from the professor:" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="Scenario: System asks for a professor\&apos;s sections" time="0.001"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Given there is a student with the first name \&quot;Bubba\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="When I ask for the student\&apos;s first name" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Then I receive the string \&quot;Bubba\&quot; from the student" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Scenario: System asks for a student\&apos;s first name" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s last name" name="Given there is a student with the last name \&quot;Blinkendorf\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s last name" name="When I ask for the student\&apos;s last name" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s last name" name="Then I receive the string \&quot;Blinkendorf\&quot; from the student" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s last name" name="Scenario: System asks for a student\&apos;s last name" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s classification" name="Given there is a student with the classification \&quot;SR\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s classification" name="When I ask for the student\&apos;s classification" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s classification" name="Then I recieve the string \&quot;SR\&quot; from the student" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s classification" name="Scenario: System asks for a student\&apos;s classification" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s sections" name="Given there is a student with the following sections:" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s sections" name="When I ask for the student\&apos;s sections" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s sections" name="Then I receive this set from the student:" time="0.001"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s sections" name="Scenario: System asks for a student\&apos;s sections" time="0.001"/>
 </testsuite>
