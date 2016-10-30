@@ -6,9 +6,9 @@ import java.util.HashSet;
  */
 public class Professor
 {
-    String firstName;
-    String lastName;
-    HashSet<Integer> sections;
+    private String firstName;
+    private String lastName;
+    private HashSet<Integer> sections;
 
     public Professor(String first, String last)
     {

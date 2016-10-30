@@ -1,4 +1,4 @@
-package implementation;
+package scheduler;
 
 /**
  * Represents a term's length (Intensive, Full Term, Session I, etc).

@@ -7,10 +7,10 @@ import java.util.HashSet;
  */
 public class Student
 {
-    String firstName;
-    String lastName;
-    String classification;
-    HashSet<Integer> sections;
+    private String firstName;
+    private String lastName;
+    private String classification;
+    private HashSet<Integer> sections;
 
     public Student(String first, String last, String classCode)
     {

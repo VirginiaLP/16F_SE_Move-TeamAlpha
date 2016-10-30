@@ -1,7 +1,7 @@
 Feature: System stores data about a unique course section
-  Scenario Outline: System asks for section crn
-    Given there is a section with the crn <crn>
-    When I ask for the section's crn
+  Scenario Outline: System asks for section CRN
+    Given there is a section with the CRN <crn>
+    When I ask for the section's CRN
     Then I receive the integer <result> from the section
 
     Examples:
