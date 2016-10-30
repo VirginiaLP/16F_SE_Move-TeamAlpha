@@ -1,5 +1,6 @@
+scheduler/Section.class
 scheduler/Parser.class
-implementation/TermLength.class
 scheduler/Student.class
+scheduler/TermLength.class
 scheduler/Professor.class
 scheduler/Term.class
