@@ -11,11 +11,11 @@ Demo 2:
 		Student
 		Professor
 Demo 3:
-	SQL Queries
-Demo 4:
 	Java Module interact w/ database
 	Java Module gather output
 	UI Module
+Demo 4:
+	SQL Queries
 Final:
 	input:
 		specific course they want to move
