@@ -5,7 +5,6 @@ package scheduler;
  */
 public class Section
 {
-    private int crn;
     private Term term;
     private TermLength termLength;
     private String subject;
@@ -17,14 +16,13 @@ public class Section
     private int timeEnd;
 
 
-    public Section(int regNum, Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end)
+    public Section(Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end)
     {
-        setSection(regNum, cTerm, length, sub, num, tit, suf, year, start, end);
+        setSection(cTerm, length, sub, num, tit, suf, year, start, end);
     }
 
-    public void setSection(int regNum, Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end)
+    public void setSection(Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end)
     {
-        setCRN(regNum);
         setTerm(cTerm);
         setTermLength(length);
         setSubject(sub);
@@ -34,11 +32,6 @@ public class Section
         setYear(year);
         setTimeStart(start);
         setTimeEnd(end);
-    }
-
-    public void setCRN(int regNum)
-    {
-        crn = regNum;
     }
 
     public void setTerm(Term cTerm)
@@ -84,11 +77,6 @@ public class Section
     public void setTimeEnd(int end)
     {
         timeEnd = end;
-    }
-
-    public int getCRN()
-    {
-        return crn;
     }
 
     public Term getTerm()

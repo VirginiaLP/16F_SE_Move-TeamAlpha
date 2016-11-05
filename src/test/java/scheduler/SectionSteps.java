@@ -19,10 +19,9 @@ public class SectionSteps
     @Given("^there is a section with the (.*?) (\\d+)$")
     public void thereIsASectionWithTheInteger(String attribute, int value) throws Throwable
     {
-        section = new Section(0, Term.UNDEFINED, TermLength.UNDEFINED, "", "", "", "", 0, 0, 0);
+        section = new Section(Term.UNDEFINED, TermLength.UNDEFINED, "", "", "", "", 0, 0, 0);
         switch (attribute)
         {
-            case "CRN": section.setCRN(value);              break;
             case "year": section.setYear(value);            break;
             case "start time": section.setTimeStart(value); break;
             case "end time": section.setTimeEnd(value);     break;
@@ -32,7 +31,7 @@ public class SectionSteps
     @Given("^there is a section with the (.*?) \"([^\"]*)\"$")
     public void thereIsASectionWithTheString(String attribute, String value) throws Throwable
     {
-        section = new Section(0, Term.UNDEFINED, TermLength.UNDEFINED, "", "", "", "", 0, 0, 0);
+        section = new Section(Term.UNDEFINED, TermLength.UNDEFINED, "", "", "", "", 0, 0, 0);
         switch (attribute)
         {
             case "subject": section.setSubject(value);      break;
@@ -45,7 +44,7 @@ public class SectionSteps
     @Given("^there is a section with the term (.*?)$")
     public void thereIsASectionWithTheTerm(String term) throws Throwable
     {
-        section = new Section(0, Term.UNDEFINED, TermLength.UNDEFINED, "", "", "", "", 0, 0, 0);
+        section = new Section(Term.UNDEFINED, TermLength.UNDEFINED, "", "", "", "", 0, 0, 0);
         switch (term.toUpperCase())
         {
             case "FALL": section.setTerm(Term.FALL);        break;
@@ -57,7 +56,7 @@ public class SectionSteps
     @Given("^there is a section with the term-length (.*?)$")
     public void thereIsASectionWithTheTermLength(String length) throws Throwable
     {
-        section = new Section(0, Term.UNDEFINED, TermLength.UNDEFINED, "", "", "", "", 0, 0, 0);
+        section = new Section(Term.UNDEFINED, TermLength.UNDEFINED, "", "", "", "", 0, 0, 0);
         switch (length.toUpperCase())
         {
             case "ACU_WORLDWIDE_SESSION_1": section.setTermLength(TermLength.ACU_WORLDWIDE_SESSION_1);           break;
@@ -83,7 +82,6 @@ public class SectionSteps
     {
         switch (attribute)
         {
-            case "CRN": result = section.getCRN();System.out.println("HIT!"); break;
             case "year": result = section.getYear();                break;
             case "start time": result = section.getTimeStart();     break;
             case "end time": result = section.getTimeEnd();         break;

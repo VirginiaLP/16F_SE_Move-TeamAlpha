@@ -8,25 +8,24 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.util.Scanner;
 import java.util.List;
-import org.apache.commons.io.IOUtils;
 
 public class ParserSteps
 {
     static String row;
-    static String fileString;
+    static File file;
     static String[] tokens;
 
     @Given("^the file \"([^\"]*)\" to parse$")
     public void theFileToParse(String fileName) throws Throwable
     {
         ClassLoader classLoader = getClass().getClassLoader();
-        fileString = IOUtils.toString(classLoader.getResourceAsStream(fileName));
+        file = new File(classLoader.getResource(fileName).getFile());
     }
 
     @When("^I request line (\\d+) of the file$")
     public void iRequestLineOfTheFile(int line) throws Throwable
     {
-        Scanner scan = new Scanner(fileString);
+        Scanner scan = new Scanner(file);
 
         // identify the desired row
         for (int count = 1; count <= line; ++count)

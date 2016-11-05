@@ -1,15 +1,4 @@
 Feature: System stores data about a unique course section
-  Scenario Outline: System asks for section CRN
-    Given there is a section with the CRN <crn>
-    When I ask for the section's CRN
-    Then I receive the integer <result> from the section
-
-    Examples:
-      | crn   | result  |
-      | 12345 | 12345   |
-      | 54321 | 54321   |
-      | 13524 | 13524   |
-
   Scenario: System asks for data about section subject
     Given there is a section with the subject "CS"
     When I ask for the section's subject
