@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="157" failures="0" name="RunCukesTest" time="0.01" errors="0" skipped="0">
+<testsuite tests="220" failures="0" name="RunCukesTest" time="0.688" errors="0" skipped="54">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -60,7 +60,178 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0.001"/>
+  <testcase classname="| 12345 | Bob |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0.082">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | Bob |" name="And I load the file into the data module" time="0.087">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | Bob |" name="When I request the student with the banner ID 12345" time="0.087">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | Bob |" name="And I ask for the student\&apos;s first name" time="0.087">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | Bob |" name="Then I receive the string Bob from the data module" time="0.087">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | Bob |" name="| 12345 | Bob |" time="0.087">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | Bob |" name="| 12345 | Bob |" time="0.091"/>
+  <testcase classname="| 54321 | Bubba |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | Bubba |" name="And I load the file into the data module" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | Bubba |" name="When I request the student with the banner ID 54321" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | Bubba |" name="And I ask for the student\&apos;s first name" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | Bubba |" name="Then I receive the string Bubba from the data module" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | Bubba |" name="| 54321 | Bubba |" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | Bubba |" name="| 54321 | Bubba |" time="0.001"/>
+  <testcase classname="| 13524 | Blah |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | Blah |" name="And I load the file into the data module" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | Blah |" name="When I request the student with the banner ID 13524" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | Blah |" name="And I ask for the student\&apos;s first name" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | Blah |" name="Then I receive the string Blah from the data module" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | Blah |" name="| 13524 | Blah |" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | Blah |" name="| 13524 | Blah |" time="0"/>
+  <testcase classname="| 12444 | John |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12444 | John |" name="And I load the file into the data module" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12444 | John |" name="When I request the professor with the professor ID 12444" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12444 | John |" name="And I ask for the professor\&apos;s first name" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12444 | John |" name="Then I receive the string John from the data module" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12444 | John |" name="| 12444 | John |" time="0.003">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12444 | John |" name="| 12444 | John |" time="0.003"/>
+  <testcase classname="| 09876 | Bob |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 09876 | Bob |" name="And I load the file into the data module" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 09876 | Bob |" name="When I request the professor with the professor ID 09876" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 09876 | Bob |" name="And I ask for the professor\&apos;s first name" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 09876 | Bob |" name="Then I receive the string Bob from the data module" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 09876 | Bob |" name="| 09876 | Bob |" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 09876 | Bob |" name="| 09876 | Bob |" time="0.002"/>
+  <testcase classname="| 77777 | Jake |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 77777 | Jake |" name="And I load the file into the data module" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 77777 | Jake |" name="When I request the professor with the professor ID 77777" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 77777 | Jake |" name="And I ask for the professor\&apos;s first name" time="0.003">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 77777 | Jake |" name="Then I receive the string Jake from the data module" time="0.003">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 77777 | Jake |" name="| 77777 | Jake |" time="0.003">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 77777 | Jake |" name="| 77777 | Jake |" time="0.003"/>
+  <testcase classname="| 13524 | ACCT |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | ACCT |" name="And I load the file into the data module" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | ACCT |" name="When I request the section with the CRN 13524" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | ACCT |" name="And I ask for the section\&apos;s subject" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | ACCT |" name="Then I receive the string ACCT from the data module" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | ACCT |" name="| 13524 | ACCT |" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 13524 | ACCT |" name="| 13524 | ACCT |" time="0.001"/>
+  <testcase classname="| 12345 | CS |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | CS |" name="And I load the file into the data module" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | CS |" name="When I request the section with the CRN 12345" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | CS |" name="And I ask for the section\&apos;s subject" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | CS |" name="Then I receive the string CS from the data module" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | CS |" name="| 12345 | CS |" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 12345 | CS |" name="| 12345 | CS |" time="0.001"/>
+  <testcase classname="| 54321 | IT |" name="Given the file \&quot;data_module_test_1.csv\&quot; to load" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | IT |" name="And I load the file into the data module" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | IT |" name="When I request the section with the CRN 54321" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | IT |" name="And I ask for the section\&apos;s subject" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | IT |" name="Then I receive the string IT from the data module" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | IT |" name="| 54321 | IT |" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="| 54321 | IT |" name="| 54321 | IT |" time="0.001"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
   <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 1 of the file" time="0"/>
   <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
   <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
@@ -87,24 +258,24 @@
   <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="Scenario: System asks for a professor\&apos;s sections" time="0"/>
   <testcase classname="| 12345 | 12345 |" name="Given there is a section with the CRN 12345" time="0"/>
   <testcase classname="| 12345 | 12345 |" name="When I ask for the section\&apos;s CRN" time="0"/>
-  <testcase classname="| 12345 | 12345 |" name="Then I receive the integer 12345 from the section" time="0.001"/>
-  <testcase classname="| 12345 | 12345 |" name="| 12345 | 12345 |" time="0.001"/>
+  <testcase classname="| 12345 | 12345 |" name="Then I receive the integer 12345 from the section" time="0"/>
+  <testcase classname="| 12345 | 12345 |" name="| 12345 | 12345 |" time="0"/>
   <testcase classname="| 54321 | 54321 |" name="Given there is a section with the CRN 54321" time="0"/>
   <testcase classname="| 54321 | 54321 |" name="When I ask for the section\&apos;s CRN" time="0"/>
   <testcase classname="| 54321 | 54321 |" name="Then I receive the integer 54321 from the section" time="0"/>
   <testcase classname="| 54321 | 54321 |" name="| 54321 | 54321 |" time="0"/>
-  <testcase classname="| 13524 | 13524 |" name="Given there is a section with the CRN 13524" time="0.001"/>
+  <testcase classname="| 13524 | 13524 |" name="Given there is a section with the CRN 13524" time="0"/>
   <testcase classname="| 13524 | 13524 |" name="When I ask for the section\&apos;s CRN" time="0"/>
-  <testcase classname="| 13524 | 13524 |" name="Then I receive the integer 13524 from the section" time="0"/>
-  <testcase classname="| 13524 | 13524 |" name="| 13524 | 13524 |" time="0"/>
+  <testcase classname="| 13524 | 13524 |" name="Then I receive the integer 13524 from the section" time="0.001"/>
+  <testcase classname="| 13524 | 13524 |" name="| 13524 | 13524 |" time="0.001"/>
   <testcase classname="Scenario: System asks for data about section subject" name="Given there is a section with the subject \&quot;CS\&quot;" time="0"/>
   <testcase classname="Scenario: System asks for data about section subject" name="When I ask for the section\&apos;s subject" time="0"/>
   <testcase classname="Scenario: System asks for data about section subject" name="Then I receive the string \&quot;CS\&quot; from the section" time="0"/>
-  <testcase classname="Scenario: System asks for data about section subject" name="Scenario: System asks for data about section subject" time="0"/>
-  <testcase classname="Scenario: System asks for data about section number" name="Given there is a section with the number \&quot;374\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for data about section subject" name="Scenario: System asks for data about section subject" time="0.001"/>
+  <testcase classname="Scenario: System asks for data about section number" name="Given there is a section with the number \&quot;374\&quot;" time="0.001"/>
   <testcase classname="Scenario: System asks for data about section number" name="When I ask for the section\&apos;s number" time="0"/>
-  <testcase classname="Scenario: System asks for data about section number" name="Then I receive the string \&quot;374\&quot; from the section" time="0.001"/>
-  <testcase classname="Scenario: System asks for data about section number" name="Scenario: System asks for data about section number" time="0.001"/>
+  <testcase classname="Scenario: System asks for data about section number" name="Then I receive the string \&quot;374\&quot; from the section" time="0"/>
+  <testcase classname="Scenario: System asks for data about section number" name="Scenario: System asks for data about section number" time="0"/>
   <testcase classname="Scenario: System asks for data about section title" name="Given there is a section with the title \&quot;Software Engineering\&quot;" time="0"/>
   <testcase classname="Scenario: System asks for data about section title" name="When I ask for the section\&apos;s title" time="0"/>
   <testcase classname="Scenario: System asks for data about section title" name="Then I receive the string \&quot;Software Engineering\&quot; from the section" time="0"/>
@@ -132,17 +303,17 @@
   <testcase classname="| Summer | Summer |" name="Given there is a section with the term Summer" time="0"/>
   <testcase classname="| Summer | Summer |" name="When I ask for the section\&apos;s term" time="0"/>
   <testcase classname="| Summer | Summer |" name="Then I receive the term Summer from the section" time="0"/>
-  <testcase classname="| Summer | Summer |" name="| Summer | Summer |" time="0"/>
+  <testcase classname="| Summer | Summer |" name="| Summer | Summer |" time="0.001"/>
   <testcase classname="| FULL_TERM | FULL_TERM |" name="Given there is a section with the term-length FULL_TERM" time="0"/>
   <testcase classname="| FULL_TERM | FULL_TERM |" name="When I ask for the section\&apos;s term-length" time="0"/>
   <testcase classname="| FULL_TERM | FULL_TERM |" name="Then I receive the term-length FULL_TERM from the section" time="0"/>
   <testcase classname="| FULL_TERM | FULL_TERM |" name="| FULL_TERM | FULL_TERM |" time="0"/>
-  <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="Given there is a section with the term-length JANUARY_INTENSIVE_COURSE" time="0"/>
+  <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="Given there is a section with the term-length JANUARY_INTENSIVE_COURSE" time="0.001"/>
   <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="When I ask for the section\&apos;s term-length" time="0"/>
   <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="Then I receive the term-length JANUARY_INTENSIVE_COURSE from the section" time="0"/>
   <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" time="0"/>
   <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="Given there is a section with the term-length ACU_WORLDWIDE_SESSION_1" time="0"/>
-  <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="When I ask for the section\&apos;s term-length" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="When I ask for the section\&apos;s term-length" time="0.001"/>
   <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="Then I receive the term-length ACU_WORLDWIDE_SESSION_1 from the section" time="0"/>
   <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" time="0"/>
   <testcase classname="| SESSION_I | SESSION_I |" name="Given there is a section with the term-length SESSION_I" time="0"/>
@@ -150,7 +321,7 @@
   <testcase classname="| SESSION_I | SESSION_I |" name="Then I receive the term-length SESSION_I from the section" time="0"/>
   <testcase classname="| SESSION_I | SESSION_I |" name="| SESSION_I | SESSION_I |" time="0"/>
   <testcase classname="| SESSION_IV | SESSION_IV |" name="Given there is a section with the term-length SESSION_IV" time="0"/>
-  <testcase classname="| SESSION_IV | SESSION_IV |" name="When I ask for the section\&apos;s term-length" time="0"/>
+  <testcase classname="| SESSION_IV | SESSION_IV |" name="When I ask for the section\&apos;s term-length" time="0.001"/>
   <testcase classname="| SESSION_IV | SESSION_IV |" name="Then I receive the term-length SESSION_IV from the section" time="0"/>
   <testcase classname="| SESSION_IV | SESSION_IV |" name="| SESSION_IV | SESSION_IV |" time="0"/>
   <testcase classname="| 2013 | 2013 |" name="Given there is a section with the year 2013" time="0"/>
@@ -172,13 +343,13 @@
   <testcase classname="| 2020 | 2020 |" name="Given there is a section with the year 2020" time="0"/>
   <testcase classname="| 2020 | 2020 |" name="When I ask for the section\&apos;s year" time="0"/>
   <testcase classname="| 2020 | 2020 |" name="Then I receive the integer 2020 from the section" time="0"/>
-  <testcase classname="| 2020 | 2020 |" name="| 2020 | 2020 |" time="0.001"/>
+  <testcase classname="| 2020 | 2020 |" name="| 2020 | 2020 |" time="0"/>
   <testcase classname="| 3000 | 3000 |" name="Given there is a section with the year 3000" time="0"/>
   <testcase classname="| 3000 | 3000 |" name="When I ask for the section\&apos;s year" time="0"/>
   <testcase classname="| 3000 | 3000 |" name="Then I receive the integer 3000 from the section" time="0"/>
   <testcase classname="| 3000 | 3000 |" name="| 3000 | 3000 |" time="0"/>
   <testcase classname="| 0800 | 0800 |" name="Given there is a section with the start time 0800" time="0"/>
-  <testcase classname="| 0800 | 0800 |" name="When I ask for the section\&apos;s start time" time="0.001"/>
+  <testcase classname="| 0800 | 0800 |" name="When I ask for the section\&apos;s start time" time="0"/>
   <testcase classname="| 0800 | 0800 |" name="Then I receive the integer 0800 from the section" time="0"/>
   <testcase classname="| 0800 | 0800 |" name="| 0800 | 0800 |" time="0"/>
   <testcase classname="| 0900 | 0900 |" name="Given there is a section with the start time 0900" time="0"/>
@@ -192,11 +363,11 @@
   <testcase classname="| 0950 | 0950 |" name="Given there is a section with the end time 0950" time="0"/>
   <testcase classname="| 0950 | 0950 |" name="When I ask for the section\&apos;s end time" time="0"/>
   <testcase classname="| 0950 | 0950 |" name="Then I receive the integer 0950 from the section" time="0"/>
-  <testcase classname="| 0950 | 0950 |" name="| 0950 | 0950 |" time="0"/>
+  <testcase classname="| 0950 | 0950 |" name="| 0950 | 0950 |" time="0.001"/>
   <testcase classname="| 1050 | 1050 |" name="Given there is a section with the end time 1050" time="0"/>
   <testcase classname="| 1050 | 1050 |" name="When I ask for the section\&apos;s end time" time="0"/>
   <testcase classname="| 1050 | 1050 |" name="Then I receive the integer 1050 from the section" time="0"/>
-  <testcase classname="| 1050 | 1050 |" name="| 1050 | 1050 |" time="0.001"/>
+  <testcase classname="| 1050 | 1050 |" name="| 1050 | 1050 |" time="0"/>
   <testcase classname="| 1420 | 1420 |" name="Given there is a section with the end time 1420" time="0"/>
   <testcase classname="| 1420 | 1420 |" name="When I ask for the section\&apos;s end time" time="0"/>
   <testcase classname="| 1420 | 1420 |" name="Then I receive the integer 1420 from the section" time="0"/>
@@ -204,7 +375,7 @@
   <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Given there is a student with the first name \&quot;Bubba\&quot;" time="0"/>
   <testcase classname="Scenario: System asks for a student\&apos;s first name" name="When I ask for the student\&apos;s first name" time="0"/>
   <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Then I receive the string \&quot;Bubba\&quot; from the student" time="0"/>
-  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Scenario: System asks for a student\&apos;s first name" time="0.001"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Scenario: System asks for a student\&apos;s first name" time="0"/>
   <testcase classname="Scenario: System asks for a student\&apos;s last name" name="Given there is a student with the last name \&quot;Blinkendorf\&quot;" time="0"/>
   <testcase classname="Scenario: System asks for a student\&apos;s last name" name="When I ask for the student\&apos;s last name" time="0"/>
   <testcase classname="Scenario: System asks for a student\&apos;s last name" name="Then I receive the string \&quot;Blinkendorf\&quot; from the student" time="0"/>

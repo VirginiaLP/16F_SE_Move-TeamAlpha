@@ -2,4 +2,6 @@ scheduler/SectionSteps.class
 scheduler/StudentSteps.class
 scheduler/ParserSteps.class
 scheduler/ProfessorSteps.class
+scheduler/DataModule.class
 RunCukesTest.class
+scheduler/DataModuleSteps.class
