@@ -141,6 +141,11 @@ class DataModule
                 room = makeRoom(tokens[68], tokens[70]);
                 roomIdNumber = generateRoomID(room);
             }
+            catch (RuntimeException e)
+            {
+                roomIdNumber = null;
+                room = null;
+            }
 
             // create student
             try
@@ -190,7 +195,7 @@ class DataModule
 
 
                 section = makeSection(term, termLength, tokens[40], tokens[42], tokens[44], tokens[43],
-                        year, startTime, endTime);
+                        year, startTime, endTime, roomIdNumber);
             }
             catch (RuntimeException e)
             {
@@ -277,7 +282,7 @@ class DataModule
     }
 
     private static Section makeSection(String cTerm, String cTermLength, String sub,
-                            String num, String tit, String suf, Integer year, Integer start, Integer end, Integer building)
+                            String num, String tit, String suf, Integer year, Integer start, Integer end, Integer room)
     {
         Term sectionTerm = null;
         TermLength sectionTermLength = null;
@@ -302,11 +307,19 @@ class DataModule
                 || suf == null || suf.equals("")
                 || year == null
                 || start == null
-                || end == null)
-                || building == null)
+                || end == null
+                || room == null)
             return null;
 
-        return new Section(sectionTerm, sectionTermLength, sub, num, tit, suf, year, start, end);
+        return new Section(sectionTerm, sectionTermLength, sub, num, tit, suf, year, start, end, room);
+    }
+
+    private static Room makeRoom(String building, String room)
+    {
+        if (building == null && building == "" || room == null && room == "")
+            return null;
+
+        return new Room(building, room);
     }
 }
 

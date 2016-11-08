@@ -25,7 +25,7 @@ public class SectionSteps
             case "year": section.setYear(value);                break;
             case "start time": section.setTimeStart(value);     break;
             case "end time": section.setTimeEnd(value);         break;
-            case "building ID": section.setBuildingID(value);   break;
+            case "building ID": section.setRoomID(value);       break;
         }
     }
 
@@ -92,7 +92,7 @@ public class SectionSteps
             case "suffix": result = section.getSuffix();            break;
             case "term": result = section.getTerm();                break;
             case "term-length": result = section.getTermLength();   break;
-            case "building ID": result = section.getBuildingID();   break;
+            case "room ID": result = section.getRoomID();           break;
         }
     }
 
