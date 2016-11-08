@@ -23,6 +23,7 @@ CREATE TABLE Section(
     year            INTEGER,
     time_start      INTEGER,
     time_end        INTEGER,
+	room_id			INTEGER,
     PRIMARY KEY(crn));
 
 CREATE TABLE Enroll(
@@ -43,3 +44,9 @@ CREATE TABLE Assign(
     CONSTRAINT fk_assign_has_crn FOREIGN KEY(crn)
         REFERENCES Section(crn));
 
+CREATE TABLE Room (
+	room_id			INTEGER,
+	building_code	VARCHAR(30),
+	room_number		VARCHAR(30),
+	max_capacity	INTEGER,
+	PRIMARY KEY(room_id));
