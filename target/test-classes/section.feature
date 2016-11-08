@@ -93,3 +93,14 @@ Feature: System stores data about a unique course section
       | 0950  | 0950    |
       | 1050  | 1050    |
       | 1420  | 1420    |
+
+  Scenario Outline: System asks for section room ID
+    Given there is a section with the room id <room id>
+    When I ask for the section's room id
+    Then I receive the integer <result> from the section
+
+    Examples:
+      | room id | result  |
+      | 1       | 1       |
+      | 50      | 50      |
+      | 100     | 100     |

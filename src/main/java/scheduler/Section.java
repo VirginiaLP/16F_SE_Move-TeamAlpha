@@ -14,14 +14,15 @@ public class Section
     private int year;
     private int timeStart;
     private int timeEnd;
+    private int buildingID;
 
 
-    public Section(Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end)
+    public Section(Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end, int building)
     {
-        setSection(cTerm, length, sub, num, tit, suf, year, start, end);
+        setSection(cTerm, length, sub, num, tit, suf, year, start, end, building);
     }
 
-    public void setSection(Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end)
+    public void setSection(Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end, int building)
     {
         setTerm(cTerm);
         setTermLength(length);
@@ -32,6 +33,7 @@ public class Section
         setYear(year);
         setTimeStart(start);
         setTimeEnd(end);
+        setBuildingID(building);
     }
 
     public void setTerm(Term cTerm)
@@ -79,6 +81,11 @@ public class Section
         timeEnd = end;
     }
 
+    public void setBuildingID(int building)
+    {
+        buildingID = building;
+    }
+
     public Term getTerm()
     {
         return term;
@@ -122,5 +129,10 @@ public class Section
     public int getTimeEnd()
     {
         return timeEnd;
+    }
+
+    public int getBuildingID()
+    {
+        return buildingID;
     }
 }

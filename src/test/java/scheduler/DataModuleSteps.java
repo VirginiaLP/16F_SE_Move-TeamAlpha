@@ -16,11 +16,63 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+import java.util.Objects;
+
+class Room
+{
+    private String buildingCode;
+    private String roomNumber;
+
+    public Room(String building, String room)
+    {
+        buildingCode = building;
+        roomNumber = room;
+    }
+
+    public String getBuildingCode() {
+        return this.buildingCode;
+    }
+
+    public String getRoomNumber() {
+        return this.roomNumber;
+    }
+
+    public void setBuildingCode(String buildingCode) {
+        this.buildingCode = buildingCode;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    @Override
+    public boolean equals(Object other)
+    {
+        Room otherRoom = (Room)other;
+
+        if (!otherRoom.getBuildingCode().equals(buildingCode))
+            return false;
+
+        if (!otherRoom.getRoomNumber().equals(roomNumber))
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(buildingCode, roomNumber);
+    }
+}
+
 class DataModule
 {
     private static HashMap<Integer, Student> students = null;
     private static HashMap<Integer, Professor> professors = null;
     private static HashMap<Integer, Section> sections = null;
+    private static HashMap<Integer, Room> rooms = null;
+    static Integer roomID = 0;
 
     private static final String CONNECTION_URL =
             "jdbc:sqlite:data/schedule_data.db";
@@ -77,11 +129,22 @@ class DataModule
             Integer crn = null;
             Section section = null;
 
+            Integer roomIdNumber = null;
+            Room room = null;
+
             // get string tokens from CSV row
             String[] tokens = Parser.parseRow(scan.nextLine());
 
+            // create room
+            try
+            {
+                room = makeRoom(tokens[68], tokens[70]);
+                roomIdNumber = generateRoomID(room);
+            }
+
             // create student
-            try {
+            try
+            {
                 bannerID = Integer.parseInt(tokens[56]);
                 student = makeStudent(tokens[57], tokens[58], tokens[33]);
             }
@@ -124,6 +187,7 @@ class DataModule
 
                 Integer startTime = Integer.parseInt(tokens[66]);
                 Integer endTime = Integer.parseInt(tokens[67]);
+
 
                 section = makeSection(term, termLength, tokens[40], tokens[42], tokens[44], tokens[43],
                         year, startTime, endTime);
@@ -169,6 +233,30 @@ class DataModule
 
     }
 
+    private static Integer generateRoomID(Room room)
+    {
+        // check that room is not null
+        if (room == null)
+            return null;
+
+        // check to see if a room's identifier has already been generated
+        if (rooms.values().contains(room))
+        {
+            for (int key = 1; key < roomID; ++key)
+            {
+                if (rooms.get(key).equals(room))
+                    return key;
+            }
+        }
+
+        // increment the roomID; the first ID will be 1
+        roomID++;
+
+        // otherwise, create a new room and room ID
+        rooms.put(roomID, room);
+        return roomID;
+    }
+
     private static Student makeStudent(String firstName, String lastName, String classification)
     {
         if (firstName == null || firstName.equals("")
@@ -189,7 +277,7 @@ class DataModule
     }
 
     private static Section makeSection(String cTerm, String cTermLength, String sub,
-                            String num, String tit, String suf, Integer year, Integer start, Integer end)
+                            String num, String tit, String suf, Integer year, Integer start, Integer end, Integer building)
     {
         Term sectionTerm = null;
         TermLength sectionTermLength = null;
@@ -215,6 +303,7 @@ class DataModule
                 || year == null
                 || start == null
                 || end == null)
+                || building == null)
             return null;
 
         return new Section(sectionTerm, sectionTermLength, sub, num, tit, suf, year, start, end);
