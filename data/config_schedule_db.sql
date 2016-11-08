@@ -46,7 +46,7 @@ CREATE TABLE Assign(
 
 CREATE TABLE Room (
 	room_id			INTEGER,
-	building_code	INTEGER,
-	room_number		INTEGER,
+	building_code	VARCHAR(30),
+	room_number		VARCHAR(30),
 	max_capacity	INTEGER,
 	PRIMARY KEY(room_id));
