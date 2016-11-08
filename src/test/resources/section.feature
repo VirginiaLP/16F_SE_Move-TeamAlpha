@@ -70,7 +70,7 @@ Feature: System stores data about a unique course section
     the minute value.
 
     Given there is a section with the start time <time>
-    When I ask for the section's start time
+    When I ask for the section's start-time
     Then I receive the integer <result> from the section
 
     Examples:
@@ -85,7 +85,7 @@ Feature: System stores data about a unique course section
   the minute value.
 
     Given there is a section with the end time <time>
-    When I ask for the section's end time
+    When I ask for the section's end-time
     Then I receive the integer <result> from the section
 
     Examples:
@@ -95,8 +95,8 @@ Feature: System stores data about a unique course section
       | 1420  | 1420    |
 
   Scenario Outline: System asks for section room ID
-    Given there is a section with the room id <room id>
-    When I ask for the section's room id
+    Given there is a section with the room ID <room id>
+    When I ask for the section's room-ID
     Then I receive the integer <result> from the section
 
     Examples:

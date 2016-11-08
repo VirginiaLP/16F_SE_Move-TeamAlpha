@@ -6,12 +6,14 @@ CREATE TABLE Student(
     class       VARCHAR(5),
     PRIMARY KEY(banner_id));
 
+DROP TABLE IF EXISTS Professor;
 CREATE TABLE Professor(
     professor_id    INTEGER,
     first_name      VARCHAR(30),
     last_name       VARCHAR(30),
     PRIMARY KEY(professor_id));
 
+DROP TABLE IF EXISTS Section;
 CREATE TABLE Section(
     crn             INTEGER,
     term            VARCHAR(6),
@@ -24,8 +26,11 @@ CREATE TABLE Section(
     time_start      INTEGER,
     time_end        INTEGER,
 	room_id			INTEGER,
-    PRIMARY KEY(crn));
+    PRIMARY KEY(crn)
+    CONSTRAINT fk_section_has_room FOREIGN KEY(room_id)
+        REFERENCES Room(room_id));
 
+DROP TABLE IF EXISTS Enroll;
 CREATE TABLE Enroll(
     banner_id   INTEGER,
     crn         INTEGER,
@@ -35,6 +40,7 @@ CREATE TABLE Enroll(
     CONSTRAINT fk_enroll_has_crn FOREIGN KEY(crn)
         REFERENCES Section(crn));
 
+DROP TABLE IF EXISTS Assign;
 CREATE TABLE Assign(
     professor_id    INTEGER,
     crn             INTEGER,
@@ -44,6 +50,7 @@ CREATE TABLE Assign(
     CONSTRAINT fk_assign_has_crn FOREIGN KEY(crn)
         REFERENCES Section(crn));
 
+DROP TABLE IF EXISTS Room;
 CREATE TABLE Room (
 	room_id			INTEGER,
 	building_code	VARCHAR(30),

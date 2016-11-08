@@ -1,6 +1,7 @@
 /home/kevin/Development/se_project_2/src/test/java/scheduler/ParserSteps.java
 /home/kevin/Development/se_project_2/src/test/java/RunCukesTest.java
 /home/kevin/Development/se_project_2/src/test/java/scheduler/SectionSteps.java
+/home/kevin/Development/se_project_2/src/test/java/scheduler/RoomSteps.java
+/home/kevin/Development/se_project_2/src/test/java/scheduler/DataLoadSteps.java
 /home/kevin/Development/se_project_2/src/test/java/scheduler/ProfessorSteps.java
-/home/kevin/Development/se_project_2/src/test/java/scheduler/DataModuleSteps.java
 /home/kevin/Development/se_project_2/src/test/java/scheduler/StudentSteps.java

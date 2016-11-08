@@ -25,7 +25,7 @@ public class SectionSteps
             case "year": section.setYear(value);                break;
             case "start time": section.setTimeStart(value);     break;
             case "end time": section.setTimeEnd(value);         break;
-            case "building ID": section.setRoomID(value);       break;
+            case "room ID": section.setRoomID(value);       break;
         }
     }
 
@@ -78,21 +78,21 @@ public class SectionSteps
     }
 
     // whens
-    @When("^I ask for the section's (.*?)$")
+    @When("^I ask for the section's ([^\"\\s]*)$")
     public void iAskForTheSections(String attribute) throws Throwable
     {
         switch (attribute)
         {
             case "year": result = section.getYear();                break;
-            case "start time": result = section.getTimeStart();     break;
-            case "end time": result = section.getTimeEnd();         break;
+            case "start-time": result = section.getTimeStart();     break;
+            case "end-time": result = section.getTimeEnd();         break;
             case "subject": result = section.getSubject();          break;
             case "number": result = section.getNumber();            break;
             case "title": result = section.getTitle();              break;
             case "suffix": result = section.getSuffix();            break;
             case "term": result = section.getTerm();                break;
             case "term-length": result = section.getTermLength();   break;
-            case "room ID": result = section.getRoomID();           break;
+            case "room-ID": result = section.getRoomID();           break;
         }
     }
 

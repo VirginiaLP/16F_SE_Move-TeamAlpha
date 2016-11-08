@@ -1,6 +1,10 @@
 /home/kevin/Development/se_project_2/src/main/java/scheduler/TermLength.java
 /home/kevin/Development/se_project_2/src/main/java/scheduler/Parser.java
+/home/kevin/Development/se_project_2/src/main/java/scheduler/DataManager.java
+/home/kevin/Development/se_project_2/src/main/java/scheduler/DataLoad.java
 /home/kevin/Development/se_project_2/src/main/java/scheduler/Section.java
 /home/kevin/Development/se_project_2/src/main/java/scheduler/Term.java
+/home/kevin/Development/se_project_2/src/main/java/scheduler/Room.java
 /home/kevin/Development/se_project_2/src/main/java/scheduler/Professor.java
+/home/kevin/Development/se_project_2/src/main/java/scheduler/DataInsert.java
 /home/kevin/Development/se_project_2/src/main/java/scheduler/Student.java
