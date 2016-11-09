@@ -1,15 +1,4 @@
 Feature: System stores data about a unique course section
-  Scenario Outline: System asks for section CRN
-    Given there is a section with the CRN <crn>
-    When I ask for the section's CRN
-    Then I receive the integer <result> from the section
-
-    Examples:
-      | crn   | result  |
-      | 12345 | 12345   |
-      | 54321 | 54321   |
-      | 13524 | 13524   |
-
   Scenario: System asks for data about section subject
     Given there is a section with the subject "CS"
     When I ask for the section's subject
@@ -81,7 +70,7 @@ Feature: System stores data about a unique course section
     the minute value.
 
     Given there is a section with the start time <time>
-    When I ask for the section's start time
+    When I ask for the section's start-time
     Then I receive the integer <result> from the section
 
     Examples:
@@ -96,7 +85,7 @@ Feature: System stores data about a unique course section
   the minute value.
 
     Given there is a section with the end time <time>
-    When I ask for the section's end time
+    When I ask for the section's end-time
     Then I receive the integer <result> from the section
 
     Examples:
@@ -104,3 +93,14 @@ Feature: System stores data about a unique course section
       | 0950  | 0950    |
       | 1050  | 1050    |
       | 1420  | 1420    |
+
+  Scenario Outline: System asks for section room ID
+    Given there is a section with the room ID <room id>
+    When I ask for the section's room-ID
+    Then I receive the integer <result> from the section
+
+    Examples:
+      | room id | result  |
+      | 1       | 1       |
+      | 50      | 50      |
+      | 100     | 100     |
