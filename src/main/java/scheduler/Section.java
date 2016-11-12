@@ -5,45 +5,27 @@ package scheduler;
  */
 public class Section
 {
-    private Term term;
-    private TermLength termLength;
     private String subject;
     private String number;
     private String title;
     private String suffix;
-    private int year;
-    private int timeStart;
-    private int timeEnd;
+    private int timeID;
     private int roomID;
 
 
-    public Section(Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end, int room)
+    public Section(String sub, String num, String tit, String suf, int time, int room)
     {
-        setSection(cTerm, length, sub, num, tit, suf, year, start, end, room);
+        setSection(sub, num, tit, suf, time, room);
     }
 
-    public void setSection(Term cTerm, TermLength length, String sub, String num, String tit, String suf, int year, int start, int end, int room)
+    public void setSection(String sub, String num, String tit, String suf, int time, int room)
     {
-        setTerm(cTerm);
-        setTermLength(length);
         setSubject(sub);
         setNumber(num);
         setTitle(tit);
         setSuffix(suf);
-        setYear(year);
-        setTimeStart(start);
-        setTimeEnd(end);
+        setTimeID(time);
         setRoomID(room);
-    }
-
-    public void setTerm(Term cTerm)
-    {
-        term = cTerm;
-    }
-
-    public void setTermLength(TermLength length)
-    {
-        termLength = length;
     }
 
     public void setSubject(String sub)
@@ -66,34 +48,14 @@ public class Section
         suffix = suf;
     }
 
-    public void setYear(int yr)
+    public void setTimeID(int time)
     {
-        year = yr;
-    }
-
-    public void setTimeStart(int start)
-    {
-        timeStart = start;
-    }
-
-    public void setTimeEnd(int end)
-    {
-        timeEnd = end;
+        timeID = time;
     }
 
     public void setRoomID(int building)
     {
         roomID = building;
-    }
-
-    public Term getTerm()
-    {
-        return term;
-    }
-
-    public TermLength getTermLength()
-    {
-        return termLength;
     }
 
     public String getSubject()
@@ -116,19 +78,9 @@ public class Section
         return suffix;
     }
 
-    public int getYear()
+    public int getTimeID()
     {
-        return year;
-    }
-
-    public int getTimeStart()
-    {
-        return timeStart;
-    }
-
-    public int getTimeEnd()
-    {
-        return timeEnd;
+        return timeID;
     }
 
     public int getRoomID()

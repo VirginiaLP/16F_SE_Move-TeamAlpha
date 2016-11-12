@@ -31,6 +31,8 @@ Feature: System stores information about different class times
       | 1906  | 1906    |
       | 1999  | 1999    |
       | 2016  | 2016    |
+      | 2020  | 2020    |
+      | 3000  | 3000    |
 
   Scenario Outline: System asks for a time's term
     Given there is a time with the term <term>
@@ -53,3 +55,8 @@ Feature: System stores information about different class times
       | SESSION_III_EXTENDED_COURSE | SESSION_III_EXTENDED_COURSE |
       | SESSION_I                   | SESSION_I                   |
       | ACU_WORLDWIDE_SESSION_2     | ACU_WORLDWIDE_SESSION_2     |
+      | FULL_TERM                   | FULL_TERM                   |
+      | JANUARY_INTENSIVE_COURSE    | JANUARY_INTENSIVE_COURSE    |
+      | ACU_WORLDWIDE_SESSION_1     | ACU_WORLDWIDE_SESSION_1     |
+      | SESSION_I                   | SESSION_I                   |
+      | SESSION_IV                  | SESSION_IV                  |

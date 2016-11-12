@@ -18,7 +18,10 @@ public class DataLoad
             new HashMap<Integer, Section>();
     public static HashMap<Integer, Room> rooms =
             new HashMap<Integer, Room>();
+    public static HashMap<Integer, Time> times =
+            new HashMap<Integer, Time>();
 
+    static Integer timeID = 0;
     static Integer roomID = 0;
 
     public static void loadGeneral(String csvPath) throws FileNotFoundException
@@ -46,8 +49,42 @@ public class DataLoad
             Integer roomIdNumber = null;
             Room room = null;
 
+            Integer timeIdNumber = null;
+            Time time = null;
+
             // get string tokens from CSV row
             String[] tokens = Parser.parseRow(scan.nextLine());
+
+            // create time
+            try
+            {
+                Integer year = Integer.parseInt(tokens[1].substring(0, 4));
+                Integer termCode = Integer.parseInt(tokens[1].substring(4, 6));
+                String term = null;
+
+                switch (termCode)
+                {
+                    case 10: term = "FALL";   break;
+                    case 20: term = "SPRING"; break;
+                    case 30: term = "SUMMER"; break;
+                }
+
+                String termLength = tokens[3].toUpperCase().replace(' ', '_');
+                Integer startTime = Integer.parseInt(tokens[66]);
+                Integer endTime = Integer.parseInt(tokens[67]);
+
+                String days = "";
+
+                for (int dayIndex = 72; dayIndex < 79; ++dayIndex)
+                    days += tokens[dayIndex];
+
+                
+            }
+            catch (RuntimeException e)
+            {
+                timeIdNumber = null;
+                time = null;
+            }
 
             // create room
             try
@@ -90,28 +127,11 @@ public class DataLoad
             {
                 crn = Integer.parseInt(tokens[35]);
 
-                Integer year = Integer.parseInt(tokens[1].substring(0, 4));
-                Integer termCode = Integer.parseInt(tokens[1].substring(4, 6));
-                String term = null;
-
-                switch (termCode)
-                {
-                    case 10: term = "FALL";   break;
-                    case 20: term = "SPRING"; break;
-                    case 30: term = "SUMMER"; break;
-                }
-
-                String termLength = tokens[3].toUpperCase().replace(' ', '_');
-
-                Integer startTime = Integer.parseInt(tokens[66]);
-                Integer endTime = Integer.parseInt(tokens[67]);
-
-                section = makeSection(term, termLength, tokens[40], tokens[42], tokens[44], tokens[43],
-                        year, startTime, endTime, roomIdNumber);
+                // include time and room IDs
+                section = makeSection(tokens[40], tokens[42], tokens[44], tokens[43], timeIdNumber, roomIdNumber);
             }
             catch (RuntimeException e)
             {
-                System.err.println(e);
                 crn = null;
                 section = null;
             }
@@ -162,6 +182,31 @@ public class DataLoad
         }
     }
 
+    private static Integer generateTimeID(Time time)
+    {
+        // check that time is not null
+        if (time== null)
+            return null;
+
+        // check to see if a time's identifier has already been generated
+        if (times.values().contains(time))
+        {
+            for (int key = 1; key < timeID; ++key)
+            {
+                if (times.get(key).equals(time))
+                    return key;
+            }
+        }
+
+        // increment the roomID; the first ID will be 1
+        timeID++;
+
+        // otherwise, create a new room and room ID
+        times.put(timeID, time);
+        return timeID;
+    }
+
+
     private static Integer generateRoomID(Room room)
     {
         // check that room is not null
@@ -206,9 +251,9 @@ public class DataLoad
         return new Professor(firstName, lastName);
     }
 
-    private static Section makeSection(String cTerm, String cTermLength, String sub,
-                                       String num, String tit, String suf, Integer year, Integer start, Integer end, Integer room)
+    private static Section makeSection(String sub, String num, String tit, String suf, Integer time, Integer room)
     {
+        /* NOT TODAY!
         // insure terms are not null
         if (cTerm == null || cTerm.equals("") || cTermLength == null || cTermLength.equals(""))
             return null;
@@ -230,19 +275,18 @@ public class DataLoad
             if (cTermLength.toUpperCase().equals(termLength.name().toUpperCase()))
                 sectionTermLength = termLength;
         }
+        */
 
         // insure fields are filled
         if (sub == null || sub.equals("")
                 || num == null || num.equals("")
                 || tit == null || tit.equals("")
                 || suf == null || suf.equals("")
-                || year == null
-                || start == null
-                || end == null
+                || time == null
                 || room == null)
             return null;
 
-        return new Section(sectionTerm, sectionTermLength, sub, num, tit, suf, year, start, end, room);
+        return new Section(sub, num, tit, suf, time, room);
     }
 
     private static Room makeRoom(String building, String room)

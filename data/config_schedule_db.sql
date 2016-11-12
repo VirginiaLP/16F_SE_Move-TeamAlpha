@@ -25,6 +25,8 @@ CREATE TABLE Section(
         PRIMARY KEY(crn),
         CONSTRAINT fk_section_has_room FOREIGN KEY(room_id)
             REFERENCES Room(room_id));
+        CONSTRAINT fk_section_has_time FOREIGN KEY(time_id)
+            REFERENCES Time(time_id));
 
 DROP TABLE IF EXISTS Time;
 CREATE TABLE Time(

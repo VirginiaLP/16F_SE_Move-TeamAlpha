@@ -104,31 +104,23 @@ public class DataInsert
 
         for (int crn : sectionMap.keySet())
         {
-            String term = sectionMap.get(crn).getTerm().name();
-            String termLength = sectionMap.get(crn).getTermLength().name();
             String subject = sectionMap.get(crn).getSubject();
             String number = sectionMap.get(crn).getNumber();
             String title = sectionMap.get(crn).getTitle();
             String suffix = sectionMap.get(crn).getSuffix();
-            int year = sectionMap.get(crn).getYear();
-            int timeStart = sectionMap.get(crn).getTimeStart();
-            int timeEnd = sectionMap.get(crn).getTimeEnd();
+            int timeID = sectionMap.get(crn).getTimeID();
             int roomID = sectionMap.get(crn).getRoomID();
 
             String insertSection = "INSERT INTO Section VALUES" +
                     "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(insertSection);
             stmt.setInt(1, crn);
-            stmt.setString(2, term);
-            stmt.setString(3, termLength);
-            stmt.setString(4, subject);
-            stmt.setString(5, number);
-            stmt.setString(6, title);
-            stmt.setString(7, suffix);
-            stmt.setInt(8, year);
-            stmt.setInt(9, timeStart);
-            stmt.setInt(10, timeEnd);
-            stmt.setInt(11, roomID);
+            stmt.setString(2, subject);
+            stmt.setString(3, number);
+            stmt.setString(4, title);
+            stmt.setString(5, suffix);
+            stmt.setInt(6, timeID);
+            stmt.setInt(7, roomID);
 
             totalAffected += stmt.executeUpdate();
         }

@@ -26,76 +26,19 @@ Feature: System stores data about a unique course section
       | H2      | H2      |
       | 03      | 03      |
 
-  Scenario Outline: System asks for section term
-    Given there is a section with the term <term>
-    When I ask for the section's term
-    Then I receive the term <result> from the section
-
-    Examples:
-      | term   | result |
-      | Fall   | Fall   |
-      | Spring | Spring |
-      | Summer | Summer |
-
-  Scenario Outline: System asks for section term-length
-    Given there is a section with the term-length <term-length>
-    When I ask for the section's term-length
-    Then I receive the term-length <result> from the section
-
-    Examples:
-      | term-length               | result                    |
-      | FULL_TERM                 | FULL_TERM                 |
-      | JANUARY_INTENSIVE_COURSE  | JANUARY_INTENSIVE_COURSE  |
-      | ACU_WORLDWIDE_SESSION_1   | ACU_WORLDWIDE_SESSION_1   |
-      | SESSION_I                 | SESSION_I                 |
-      | SESSION_IV                | SESSION_IV                |
-
-  Scenario Outline: System asks for section year
-    Given there is a section with the year <year>
-    When I ask for the section's year
+  Scenario Outline: System asks for section time ID
+    Given there is a section with the time-ID <time id>
+    When I ask for the section's time-ID
     Then I receive the integer <result> from the section
 
     Examples:
-      | year  | result |
-      | 2013  | 2013   |
-      | 2014  | 2014   |
-      | 2015  | 2015   |
-      | 2016  | 2016   |
-      | 2020  | 2020   |
-      | 3000  | 3000   |
+      | time id | result  |
+      | 3       | 3       |
+      | 30      | 30      |
+      | 300     | 300     |
 
-  Scenario Outline: Systems asks for section start time
-    Time is represented on a 24 hour scale as an integer, with the first
-    two digits representing the hour value, and the latter two representing
-    the minute value.
-
-    Given there is a section with the start time <time>
-    When I ask for the section's start-time
-    Then I receive the integer <result> from the section
-
-    Examples:
-      | time  | result  |
-      | 0800  | 0800    |
-      | 0900  | 0900    |
-      | 1330  | 1330    |
-
-  Scenario Outline: Systems asks for section end time
-  Time is represented on a 24 hour scale as an integer, with the first
-  two digits representing the hour value, and the latter two representing
-  the minute value.
-
-    Given there is a section with the end time <time>
-    When I ask for the section's end-time
-    Then I receive the integer <result> from the section
-
-    Examples:
-      | time  | result  |
-      | 0950  | 0950    |
-      | 1050  | 1050    |
-      | 1420  | 1420    |
-
-  Scenario Outline: System asks for section room ID
-    Given there is a section with the room ID <room id>
+  Scenario Outline: System asks for section room-ID
+    Given there is a section with the room-ID <room id>
     When I ask for the section's room-ID
     Then I receive the integer <result> from the section
 
