@@ -53,3 +53,15 @@ Feature: System stores information about different class times
       | SESSION_III_EXTENDED_COURSE | SESSION_III_EXTENDED_COURSE |
       | SESSION_I                   | SESSION_I                   |
       | ACU_WORLDWIDE_SESSION_2     | ACU_WORLDWIDE_SESSION_2     |
+
+  Scenario Outline: System asks for a time's days
+    Given there is a time with the days <days>
+	When I ask for the time's days
+	Then I receive the string <result> from the time
+	
+	Examples:
+	  | days    | result   |
+	  | MWF     | MWF      |
+	  | TR      | TR       |
+	  | MW      | MW       |
+	  | MTWRFSU | MTWRFSU  |

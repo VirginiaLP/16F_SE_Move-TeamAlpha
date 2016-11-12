@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Created by kevin on 11/12/16.
+ * Modified by Isaak on 11/12/16.
  */
 public class TimeSteps
 {
@@ -19,7 +20,7 @@ public class TimeSteps
     @Given("^there is a time with the (.*?) (\\d+)$")
     public void thereIsATimeWithTheInteger(String attribute, int value) throws Throwable
     {
-        time = new Time(0, 0, 0, Term.UNDEFINED, TermLength.UNDEFINED);
+        time = new Time(0, 0, 0, Term.UNDEFINED, TermLength.UNDEFINED, "");
 
         switch (attribute)
         {
@@ -32,7 +33,7 @@ public class TimeSteps
     @Given("^there is a time with the term (.*?)$")
     public void thereIsATimeWithTheTerm(String term) throws Throwable
     {
-        time = new Time(0, 0, 0, Term.UNDEFINED, TermLength.UNDEFINED);
+        time = new Time(0, 0, 0, Term.UNDEFINED, TermLength.UNDEFINED, "");
 
         switch (term.toUpperCase())
         {
@@ -45,7 +46,7 @@ public class TimeSteps
     @Given("^there is a time with the term-length (.*?)$")
     public void thereIsATimeWithTheTermLength(String length) throws Throwable
     {
-        time = new Time(0, 0, 0, Term.UNDEFINED, TermLength.UNDEFINED);
+        time = new Time(0, 0, 0, Term.UNDEFINED, TermLength.UNDEFINED, "");
 
         switch (length.toUpperCase())
         {
@@ -65,6 +66,18 @@ public class TimeSteps
             case "SESSION_IV_EXTENDED_COURSE": time.setTermLength(TermLength.SESSION_IV_EXTENDED_COURSE);     break;
         }
     }
+	
+	@Given("^there is a time with the days (.*?)$")
+    public void thereIsATimeWithTheDays(String tDays) throws Throwable
+    {
+        time = new Time(0, 0, 0, Term.UNDEFINED, TermLength.UNDEFINED, "");
+        String dayList = "";
+		
+		for (char day : tDays.toCharArray())
+			dayList += day;
+		
+		time.setDays(dayList);
+    }
 
     // whens
     @When("^I ask for the time's ([^\"\\s]*)$")
@@ -77,6 +90,7 @@ public class TimeSteps
             case "year": result = time.getYear();                break;
             case "term": result = time.getTerm();                break;
             case "term-length": result = time.getTermLength();   break;
+			case "days": result = time.getDays():				 break;
         }
     }
 
@@ -104,4 +118,10 @@ public class TimeSteps
     {
         assertEquals(expected.toUpperCase(), ((TermLength)(result)).name());
     }
+	
+	@Then("^I receive the string \"([^\"]*)\" from the time$")
+	public void iReceiveTheStringFromTheTime(String expected) throws Throwable
+	{
+		assertEquals(expected, result);
+	}
 }
