@@ -90,7 +90,7 @@ public class TimeSteps
             case "year": result = time.getYear();                break;
             case "term": result = time.getTerm();                break;
             case "term-length": result = time.getTermLength();   break;
-			case "days": result = time.getDays():				 break;
+			case "days": result = time.getDays();				 break;
         }
     }
 
@@ -100,13 +100,7 @@ public class TimeSteps
     {
         assertEquals(expected, result);
     }
-
-    @Then("^I receive the string \"([^\"]*)\" from the time$")
-    public void iReceiveTheStringFromTheSection(String expected) throws Throwable
-    {
-        assertEquals(expected, result);
-    }
-
+    
     @Then("^I receive the term (.*?) from the time$")
     public void iReceiveTheTermFromTheSection(String expected) throws Throwable
     {

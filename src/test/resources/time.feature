@@ -64,7 +64,7 @@ Feature: System stores information about different class times
   Scenario Outline: System asks for a time's days
     Given there is a time with the days <days>
 	When I ask for the time's days
-	Then I receive the string <result> from the time
+	Then I receive the string "<result>" from the time
 	
 	Examples:
 	  | days    | result   |

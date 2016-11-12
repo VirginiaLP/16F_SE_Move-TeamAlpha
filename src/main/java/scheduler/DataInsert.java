@@ -33,8 +33,48 @@ public class DataInsert
             stmt.setInt(1, roomID);
             stmt.setString(2, buildingCode);
             stmt.setString(3, roomNumber);
-            stmt.setInt(4, maxCapacity); // should be null if maxCapacity is zero
-                                         // fix this later
+
+            // set max capacity to NULL if left unset
+            if (maxCapacity == 0)
+                stmt.setNull(4, java.sql.Types.INTEGER);
+            else
+                stmt.setInt(4, maxCapacity);
+
+            totalAffected += stmt.executeUpdate();
+        }
+
+        stmt.close();
+        return totalAffected;
+    }
+
+    public static int insertTimes(HashMap<Integer, Time> timeMap) throws SQLException
+    {
+        Connection conn = DataManager.getConnection();
+        int totalAffected = 0;
+        PreparedStatement stmt = null;
+
+        for (int roomID : timeMap.keySet())
+        {
+            // gather update parameters
+            int timeStart = timeMap.get(roomID).getTimeStart();
+            int timeEnd = timeMap.get(roomID).getTimeEnd();
+            int year = timeMap.get(roomID).getYear();
+            String term = timeMap.get(roomID).getTerm().name();
+            String termLength = timeMap.get(roomID).getTermLength().name();
+            String days = timeMap.get(roomID).getDays();
+
+            // create prepared SQL update query
+            String insertRoom = "INSERT INTO Room VALUES" +
+                    "(?, ?, ?, ?, ?, ?, ?);";
+
+            stmt = conn.prepareStatement(insertRoom);
+            stmt.setInt(1, roomID);
+            stmt.setInt(2, timeStart);
+            stmt.setInt(3, timeEnd);
+            stmt.setInt(4, year);
+            stmt.setString(5, term);
+            stmt.setString(6, termLength);
+            stmt.setString(7, days);
 
             totalAffected += stmt.executeUpdate();
         }
@@ -112,7 +152,7 @@ public class DataInsert
             int roomID = sectionMap.get(crn).getRoomID();
 
             String insertSection = "INSERT INTO Section VALUES" +
-                    "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "(?, ?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(insertSection);
             stmt.setInt(1, crn);
             stmt.setString(2, subject);

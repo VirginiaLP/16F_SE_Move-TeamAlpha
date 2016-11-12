@@ -24,6 +24,7 @@ public class DataManager
     public static void updateDatabase() throws SQLException
     {
         int roomsAffected = 0;
+        int timesAffected = 0;
         int studentsAffected = 0;
         int professorsAffected = 0;
         int sectionsAffected = 0;
@@ -32,6 +33,7 @@ public class DataManager
         {
             // insert entities, count number of inserts
             roomsAffected = DataInsert.insertRooms(DataLoad.rooms);
+            timesAffected = DataInsert.insertTimes(DataLoad.times);
             studentsAffected = DataInsert.insertStudents(DataLoad.students);
             professorsAffected = DataInsert.insertProfessors(DataLoad.professors);
             sectionsAffected = DataInsert.insertSections(DataLoad.sections);

@@ -78,7 +78,8 @@ public class DataLoad
                 for (int dayIndex = 72; dayIndex < 79; ++dayIndex)
                     days += tokens[dayIndex];
 
-                
+                time = makeTime(startTime, endTime, year, term, termLength, days);
+                timeIdNumber = generateTimeID(time);
             }
             catch (RuntimeException e)
             {
@@ -206,7 +207,6 @@ public class DataLoad
         return timeID;
     }
 
-
     private static Integer generateRoomID(Room room)
     {
         // check that room is not null
@@ -241,7 +241,6 @@ public class DataLoad
         return new Student(firstName, lastName, classification);
     }
 
-
     private static Professor makeProfessor(String firstName, String lastName)
     {
         if (firstName == null || firstName.equals("")
@@ -253,7 +252,28 @@ public class DataLoad
 
     private static Section makeSection(String sub, String num, String tit, String suf, Integer time, Integer room)
     {
-        /* NOT TODAY!
+        // insure fields are filled
+        if (sub == null || sub.equals("")
+                || num == null || num.equals("")
+                || tit == null || tit.equals("")
+                || suf == null || suf.equals("")
+                || time == null
+                || room == null)
+            return null;
+
+        return new Section(sub, num, tit, suf, time, room);
+    }
+
+    private static Room makeRoom(String building, String number)
+    {
+        if (building == null || building == "" || number == null || number == "")
+            return null;
+
+        return new Room(building, number);
+    }
+
+    private static Time makeTime(Integer timeStart, Integer timeEnd, Integer year, String cTerm, String cTermLength, String days)
+    {
         // insure terms are not null
         if (cTerm == null || cTerm.equals("") || cTermLength == null || cTermLength.equals(""))
             return null;
@@ -275,26 +295,16 @@ public class DataLoad
             if (cTermLength.toUpperCase().equals(termLength.name().toUpperCase()))
                 sectionTermLength = termLength;
         }
-        */
 
-        // insure fields are filled
-        if (sub == null || sub.equals("")
-                || num == null || num.equals("")
-                || tit == null || tit.equals("")
-                || suf == null || suf.equals("")
-                || time == null
-                || room == null)
+        if (timeStart == null || timeStart.equals("")
+                || timeEnd == null || timeEnd.equals("")
+                || year == null || year.equals("")
+                || sectionTerm == null
+                || sectionTermLength == null
+                || days == null || days.equals(""))
             return null;
 
-        return new Section(sub, num, tit, suf, time, room);
-    }
-
-    private static Room makeRoom(String building, String room)
-    {
-        if (building == null || building == "" || room == null || room == "")
-            return null;
-
-        return new Room(building, room);
+        return new Time(timeStart, timeEnd, year, sectionTerm, sectionTermLength, days);
     }
 }
 
