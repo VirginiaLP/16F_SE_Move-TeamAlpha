@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 
 import static org.junit.Assert.*;
 
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -36,7 +37,8 @@ public class DataLoadSteps
     @When("^I load the file into the data loader$")
     public void iLoadTheFileIntoTheDataLoader() throws Throwable
     {
-        DataLoad.loadGeneral(fileName);
+        ClassLoader loader = getClass().getClassLoader();
+        DataLoad.loadGeneral(Paths.get(loader.getResource(fileName).toURI()));
     }
 
     @When("^I request the student with the banner ID (\\d+)$")

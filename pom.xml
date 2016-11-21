@@ -53,6 +53,12 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.14.2.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
     </dependencies>
 
     <build>

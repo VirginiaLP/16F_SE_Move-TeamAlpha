@@ -1,5 +1,6 @@
 package scheduler;
 
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,14 +10,18 @@ import java.sql.SQLException;
  */
 public class DataManager
 {
-    private static final String CONNECTION_URL =
-            "jdbc:sqlite:data/schedule_data.db";
+    private static String CONNECTION_URI = null;
     private static Connection conn = null;
+
+    public static void setDBPath(Path path)
+    {
+        CONNECTION_URI = "jdbc:sqlite:" + path.toString();
+    }
 
     public static Connection getConnection() throws SQLException
     {
         if (conn == null)
-            conn = DriverManager.getConnection(CONNECTION_URL);
+            conn = DriverManager.getConnection(CONNECTION_URI);
 
         return conn;
     }

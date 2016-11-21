@@ -2,6 +2,8 @@ package scheduler;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -24,12 +26,10 @@ public class DataLoad
     static Integer timeID = 0;
     static Integer roomID = 0;
 
-    public static void loadGeneral(String csvPath) throws FileNotFoundException
+    public static void loadGeneral(Path csvPath) throws IOException
     {
         // open CSV file
-        ClassLoader classLoader = DataLoad.class.getClassLoader();
-        File file = new File(classLoader.getResource(csvPath).getFile());
-        Scanner scan = new Scanner(file);
+        Scanner scan = new Scanner(csvPath);
 
         // discard first line of headers
         scan.nextLine();
@@ -157,9 +157,10 @@ public class DataLoad
         }
     }
 
-    public static void loadRooms(String csvPath) throws FileNotFoundException
+    public static void loadRooms(Path csvPath) throws IOException
     {
-        Scanner scan = new Scanner(new File(csvPath));
+        Scanner scan = new Scanner(csvPath);
+
         while (scan.hasNextLine())
         {
             // create string tokens from each line
