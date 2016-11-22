@@ -18,7 +18,7 @@ public class ScheduleRunner
     public static void main(String... args)
     {
         // check if the user has a data directory
-        Path dataDirectory = Paths.get(System.getProperty("user.home") + ".schedule_data/");
+        Path dataDirectory = Paths.get(System.getProperty("user.home") + "./.schedule_data/");
         Path csvDirectory = Paths.get(args[0]);
 
         // if the folder does not exist, create it
@@ -30,7 +30,7 @@ public class ScheduleRunner
                     configWindows();
 
                 if (SystemUtils.IS_OS_MAC)
-                    conficMac();
+                    configMac();
 
                 if (SystemUtils.IS_OS_LINUX)
                     configLinux();
@@ -60,7 +60,7 @@ public class ScheduleRunner
     public static void configWindows() throws IOException
     {
         // identify user's home directory
-        Path dataDirectory = Paths.get(System.getProperty("user.home") + ".schedule_data\\");
+        Path dataDirectory = Paths.get(System.getProperty("user.home") + ".\\.schedule_data\\");
 
         // make folder hidden by Windows system
         Files.setAttribute(dataDirectory, "dos:hidden", true);
@@ -69,10 +69,10 @@ public class ScheduleRunner
         Files.createDirectory(dataDirectory);
     }
 
-    public static void conficMac() throws IOException
+    public static void configMac() throws IOException
     {
         // identify user's home directory
-        Path dataDirectory = Paths.get(System.getProperty("user.home") + ".schedule_data/");
+        Path dataDirectory = Paths.get(System.getProperty("user.home") + "./.schedule_data/");
 
         // create the set of permissions for the directory
         Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rwxr-x---");
@@ -85,7 +85,7 @@ public class ScheduleRunner
     public static void configLinux() throws IOException
     {
         // identify user's home directory
-        Path dataDirectory = Paths.get(System.getProperty("user.home") + ".schedule_data/");
+        Path dataDirectory = Paths.get(System.getProperty("user.home") + "./.schedule_data/");
 
         // create the set of permissions for the directory
         Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rwxr-x---");
