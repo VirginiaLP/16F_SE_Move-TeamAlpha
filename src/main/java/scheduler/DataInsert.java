@@ -1,6 +1,5 @@
 package scheduler;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -12,9 +11,34 @@ import java.util.HashSet;
  */
 public class DataInsert
 {
+    private static Connection conn = null;
+
+    public static void initConnection()
+    {
+        try
+        {
+            conn = DataManager.getConnection();
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public static void closeConnection()
+    {
+        try
+        {
+            conn.close();
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public static int insertRooms(HashMap<Integer, Room> roomMap) throws SQLException
     {
-        Connection conn = DataManager.getConnection();
         int totalAffected = 0;
         PreparedStatement stmt = null;
 
@@ -26,7 +50,8 @@ public class DataInsert
             int maxCapacity = roomMap.get(roomID).getMaxCapacity();
 
             // create prepared SQL update query
-            String insertRoom = "INSERT INTO Room VALUES" +
+            String insertRoom = "INSERT INTO Room " +
+                    "(room_id, building_code, room_number, max_capacity) VALUES " +
                     "(?, ?, ?, ?);";
 
             stmt = conn.prepareStatement(insertRoom);
@@ -49,26 +74,26 @@ public class DataInsert
 
     public static int insertTimes(HashMap<Integer, Time> timeMap) throws SQLException
     {
-        Connection conn = DataManager.getConnection();
         int totalAffected = 0;
         PreparedStatement stmt = null;
 
-        for (int roomID : timeMap.keySet())
+        for (int timeID : timeMap.keySet())
         {
             // gather update parameters
-            int timeStart = timeMap.get(roomID).getTimeStart();
-            int timeEnd = timeMap.get(roomID).getTimeEnd();
-            int year = timeMap.get(roomID).getYear();
-            String term = timeMap.get(roomID).getTerm().name();
-            String termLength = timeMap.get(roomID).getTermLength().name();
-            String days = timeMap.get(roomID).getDays();
+            int timeStart = timeMap.get(timeID).getTimeStart();
+            int timeEnd = timeMap.get(timeID).getTimeEnd();
+            int year = timeMap.get(timeID).getYear();
+            String term = timeMap.get(timeID).getTerm().name();
+            String termLength = timeMap.get(timeID).getTermLength().name();
+            String days = timeMap.get(timeID).getDays();
 
             // create prepared SQL update query
-            String insertRoom = "INSERT INTO Room VALUES" +
+            String insertRoom = "INSERT INTO Time " +
+                    "(time_id, start_time, end_time, days, class_year, term, term_length) VALUES " +
                     "(?, ?, ?, ?, ?, ?, ?);";
 
             stmt = conn.prepareStatement(insertRoom);
-            stmt.setInt(1, roomID);
+            stmt.setInt(1, timeID);
             stmt.setInt(2, timeStart);
             stmt.setInt(3, timeEnd);
             stmt.setInt(4, year);
@@ -85,7 +110,6 @@ public class DataInsert
 
     public static int insertStudents(HashMap<Integer, Student> studentMap) throws SQLException
     {
-        Connection conn = DataManager.getConnection();
         int totalAffected = 0;
         PreparedStatement stmt = null;
 
@@ -95,7 +119,8 @@ public class DataInsert
             String lastName = studentMap.get(bannerID).getLastName();
             String classification = studentMap.get(bannerID).getClassification();
 
-            String insertStudent = "INSERT INTO Student VALUES" +
+            String insertStudent = "INSERT INTO Student " +
+                    "(banner_id, first_name, last_name, class) VALUES " +
                     "(?, ?, ?, ?);";
 
             stmt = conn.prepareStatement(insertStudent);
@@ -113,7 +138,6 @@ public class DataInsert
 
     public static int insertProfessors(HashMap<Integer, Professor> professorMap) throws SQLException
     {
-        Connection conn = DataManager.getConnection();
         int totalAffected = 0;
         PreparedStatement stmt = null;
 
@@ -122,7 +146,8 @@ public class DataInsert
             String firstName = professorMap.get(professorID).getFirstName();
             String lastName = professorMap.get(professorID).getLastName();
 
-            String insertProfessor = "INSERT INTO Professor VALUES" +
+            String insertProfessor = "INSERT INTO Professor " +
+                    "(professor_id, first_name, last_name) VALUES " +
                     "(?, ?, ?);";
 
             stmt = conn.prepareStatement(insertProfessor);
@@ -138,7 +163,6 @@ public class DataInsert
 
     public static int insertSections(HashMap<Integer, Section> sectionMap) throws SQLException
     {
-        Connection conn = DataManager.getConnection();
         int totalAffected = 0;
         PreparedStatement stmt = null;
 
@@ -151,7 +175,8 @@ public class DataInsert
             int timeID = sectionMap.get(crn).getTimeID();
             int roomID = sectionMap.get(crn).getRoomID();
 
-            String insertSection = "INSERT INTO Section VALUES" +
+            String insertSection = "INSERT INTO Section " +
+                    "(crn, class_subject, class_number, class_title, class_suffix, time_id, room_id) VALUES " +
                     "(?, ?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(insertSection);
             stmt.setInt(1, crn);
@@ -171,7 +196,6 @@ public class DataInsert
 
     public static int insertEnrolls(HashMap<Integer, Student> studentMap) throws SQLException
     {
-        Connection conn = DataManager.getConnection();
         int totalAffected = 0;
         PreparedStatement stmt = null;
 
@@ -181,7 +205,9 @@ public class DataInsert
 
             for (int crn : crnSet)
             {
-                String insertEnroll = "INSERT INTO Room VALUES (?, ?)";
+                String insertEnroll = "INSERT INTO Enroll " +
+                        "(banner_id, crn) VALUES " +
+                        "(?, ?)";
 
                 stmt = conn.prepareStatement(insertEnroll);
                 stmt.setInt(1, bannerID);
@@ -197,7 +223,6 @@ public class DataInsert
 
     public static int insertAssigns(HashMap<Integer, Professor> professorMap) throws SQLException
     {
-        Connection conn = DataManager.getConnection();
         int totalAffected = 0;
         PreparedStatement stmt = null;
 
@@ -207,7 +232,9 @@ public class DataInsert
 
             for (int crn : crnSet)
             {
-                String insertAssign = "INSERT INTO Room VALUES (?, ?)";
+                String insertAssign = "INSERT INTO Assign " +
+                        "(professor_id, crn) " +
+                        "VALUES (?, ?)";
 
                 stmt = conn.prepareStatement(insertAssign);
                 stmt.setInt(1, professorID);
