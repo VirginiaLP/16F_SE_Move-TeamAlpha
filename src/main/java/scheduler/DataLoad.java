@@ -6,12 +6,15 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 /**
  * Created by kevin on 11/8/16.
  */
 public class DataLoad
 {
+    private static final Logger LOGGER = Logger.getLogger(DataLoad.class.getPackage().getName());
+
     public static HashMap<Integer, Student> students =
             new HashMap<Integer, Student>();
     public static HashMap<Integer, Professor> professors =
@@ -187,16 +190,26 @@ public class DataLoad
     private static Integer generateTimeID(Time time)
     {
         // check that time is not null
-        if (time== null)
+        if (time == null)
+        {
+            LOGGER.finer("Time ID not generated - Time was null: " +
+                    time.getTimeStart() + " " + time.getTimeEnd() + " " + time.getYear() + " " + time.getTerm() + " " +
+                    time.getTermLength() + " " + time.getDays());
             return null;
+        }
 
         // check to see if a time's identifier has already been generated
         if (times.values().contains(time))
         {
-            for (int key = 1; key < timeID; ++key)
+            for (int key = 1; key <= timeID; ++key)
             {
                 if (times.get(key).equals(time))
+                {
+                    LOGGER.finer("Time ID not generated - Time was found: " +
+                            time.getTimeStart() + " " + time.getTimeEnd() + " " + time.getYear() + " " + time.getTerm() + " " +
+                            time.getTermLength() + " " + time.getDays());
                     return key;
+                }
             }
         }
 
@@ -204,6 +217,9 @@ public class DataLoad
         timeID++;
 
         // otherwise, create a new room and room ID
+        LOGGER.finer("Time ID generated - Time did not yet exist: " +
+                time.getTimeStart() + " " + time.getTimeEnd() + " " + time.getYear() + " " + time.getTerm() + " " +
+                time.getTermLength() + " " + time.getDays() + " (" + timeID + ")");
         times.put(timeID, time);
         return timeID;
     }
@@ -212,15 +228,23 @@ public class DataLoad
     {
         // check that room is not null
         if (room == null)
+        {
+            LOGGER.finer("Room ID not generated - Room was null: " +
+                    room.getBuildingCode() + " " + room.getMaxCapacity());
             return null;
+        }
 
         // check to see if a room's identifier has already been generated
         if (rooms.values().contains(room))
         {
-            for (int key = 1; key < roomID; ++key)
+            for (int key = 1; key <= roomID; ++key)
             {
                 if (rooms.get(key).equals(room))
+                {
+                    LOGGER.finer("Room ID not generated - Room was found: " +
+                            room.getBuildingCode() + " " + room.getMaxCapacity());
                     return key;
+                }
             }
         }
 
@@ -228,6 +252,8 @@ public class DataLoad
         roomID++;
 
         // otherwise, create a new room and room ID
+        LOGGER.finer("Room ID generated - Room did not yet exist: " +
+                room.getBuildingCode() + " " + room.getMaxCapacity() + " (" + roomID + ")");
         rooms.put(roomID, room);
         return roomID;
     }
@@ -239,6 +265,7 @@ public class DataLoad
                 || classification == null || classification.equals(""))
             return null;
 
+        LOGGER.finest("A Student was made: " + firstName + " " + lastName + " " + classification);
         return new Student(firstName, lastName, classification);
     }
 
@@ -248,6 +275,7 @@ public class DataLoad
                 || lastName == null || lastName.equals(""))
             return null;
 
+        LOGGER.finest("A Professor was made: " + firstName + " " + lastName);
         return new Professor(firstName, lastName);
     }
 
@@ -262,6 +290,7 @@ public class DataLoad
                 || room == null)
             return null;
 
+        LOGGER.finest("A Section was made: " + sub + " " + num + " " + tit + " " + suf + " " + time + " " + room);
         return new Section(sub, num, tit, suf, time, room);
     }
 
@@ -270,6 +299,7 @@ public class DataLoad
         if (building == null || building == "" || number == null || number == "")
             return null;
 
+        LOGGER.finest("A Room was made: " + building + " " + number);
         return new Room(building, number);
     }
 
@@ -305,6 +335,8 @@ public class DataLoad
                 || days == null || days.equals(""))
             return null;
 
+        LOGGER.finest("A Time was made: " + timeStart + " " + timeEnd +
+                " " + year + " " + cTerm + " " + cTermLength + " " + days);
         return new Time(timeStart, timeEnd, year, sectionTerm, sectionTermLength, days);
     }
 }

@@ -7,12 +7,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by kevin on 11/8/16.
  */
 public class DataManager
 {
+    private static final Logger LOGGER  = Logger.getLogger(DataManager.class.getPackage().getName());
+
     private static String CONNECTION_URI = null;
     private static Connection conn = null;
 
@@ -59,14 +64,26 @@ public class DataManager
             DataInsert.initConnection();
 
             // insert entities, count number of inserts
+            LOGGER.info("Inserting Room data into the database");
             roomsAffected = DataInsert.insertRooms(DataLoad.rooms);
+
+            LOGGER.info("Inserting Time data into the database");
             timesAffected = DataInsert.insertTimes(DataLoad.times);
+
+            LOGGER.info("Inserting Student data into the database");
             studentsAffected = DataInsert.insertStudents(DataLoad.students);
+
+            LOGGER.info("Inserting Professor data into the database");
             professorsAffected = DataInsert.insertProfessors(DataLoad.professors);
+
+            LOGGER.info("Inserting Section data into the database");
             sectionsAffected = DataInsert.insertSections(DataLoad.sections);
 
             // build associative entites
+            LOGGER.info("Inserting Enroll data into the database");
             DataInsert.insertEnrolls(DataLoad.students);
+
+            LOGGER.info("Inserting Assign data into the database");
             DataInsert.insertAssigns(DataLoad.professors);
 
             // close connection in DataInsert
@@ -74,13 +91,12 @@ public class DataManager
         }
         catch (SQLException e)
         {
-            e.printStackTrace();
+            LOGGER.severe("Data could not be successfully loaded into the database");
         }
     }
 
     public static void initDatabase() throws SQLException
     {
-        System.out.println("Initializing database");
         // access database initialization file
         ClassLoader loader = DataManager.class.getClassLoader();
         InputStream initScriptStream = loader.getResourceAsStream("config_schedule_db.sql");
@@ -93,8 +109,7 @@ public class DataManager
             initScript += scan.nextLine() + "\n";
 
         scan.close();
-        System.out.println("Init script built - it reads as follows:");
-        System.out.println(initScript);
+
         // initialize the database
         Statement stmt = null;
 
@@ -105,7 +120,7 @@ public class DataManager
         }
         catch (SQLException e)
         {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Database schema could not be successfully loaded", e);
         }
         finally
         {

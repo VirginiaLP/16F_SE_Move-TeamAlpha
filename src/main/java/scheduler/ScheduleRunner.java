@@ -7,24 +7,27 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.*;
 import java.util.Set;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 /**
  * Created by kevin on 11/12/16.
  */
 public class ScheduleRunner
 {
+    private static final Logger LOGGER = Logger.getLogger(ScheduleRunner.class.getPackage().getName());
+
     public static void main(String... args)
     {
         // check if the user has a data directory
-        Path dataDirectory = Paths.get(System.getProperty("user.home") + "/.schedule_data/");
-        System.out.println("User Home: " + System.getProperty("user.home"));
-        System.out.println("Data Directory: " + dataDirectory.toString());
+        Path dataDirectory = Paths.get(System.getProperty("user.home"), ".schedule_data");
         Path csvDirectory = Paths.get(args[0]);
 
         // if the folder does not exist, create it
         if (!Files.exists(dataDirectory))
         {
-            System.out.println("Directory does not exist");
             try
             {
                 if (SystemUtils.IS_OS_WINDOWS)
@@ -41,23 +44,48 @@ public class ScheduleRunner
                 e.printStackTrace();
             }
         }
-        else
-            System.out.println("Directory apparently does exist");
 
+        // set up log file
         try
         {
-            // load in data from CSV
-            DataLoad.loadGeneral(csvDirectory);
+            Path logFile = Paths.get(dataDirectory.toString(), "schedule_operations.log");
+            Files.createFile(logFile);
 
-            // update database
-            DataManager.setDBPath(dataDirectory);   // set path to database
-            DataManager.initConnection();           // set up database connection in DataManager
-            DataManager.updateDatabase();           // update database with loaded data
-            DataManager.closeConnection();          // close connection to database in DataManager
+            // print to designated log file
+            FileHandler fh = new FileHandler(Paths.get(dataDirectory.toString(), "schedule_operations.log").toString());
+            fh.setFormatter(new SimpleFormatter());
+
+            LOGGER.addHandler(fh);
+            LOGGER.setLevel(Level.ALL);
         }
         catch (IOException e)
         {
             e.printStackTrace();
+        }
+
+        // run the system
+        try
+        {
+            // load in data from CSV
+            LOGGER.info("Loading system information from CSV");
+            DataLoad.loadGeneral(csvDirectory);
+
+            // update database
+            LOGGER.info("Setting up database path");
+            DataManager.setDBPath(dataDirectory);   // set path to database
+
+            LOGGER.info("Setting up database connection in DataManager");
+            DataManager.initConnection();           // set up database connection in DataManager
+
+            LOGGER.info("Updating database with system information");
+            DataManager.updateDatabase();           // update database with loaded data
+
+            LOGGER.info("Closing database connection in DataManager");
+            DataManager.closeConnection();          // close connection to database in DataManager
+        }
+        catch (IOException e)
+        {
+            LOGGER.severe("Exception loading the database");
         }
     }
 
@@ -88,17 +116,14 @@ public class ScheduleRunner
 
     public static void configLinux() throws IOException
     {
-        System.out.println("Here I am to make the file!");
         // identify user's home directory
         Path dataDirectory = Paths.get(System.getProperty("user.home") + "/.schedule_data/");
-        System.out.println("Just made the directory: " + dataDirectory.toString());
 
         // create the set of permissions for the directory
         Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rwxr-x---");
         FileAttribute<Set<PosixFilePermission>> attr = PosixFilePermissions.asFileAttribute(perms);
-        System.out.println("Permissions set");
+
         // create the data directory
         Files.createDirectory(dataDirectory, attr);
-        System.out.println("Directory probably created");
     }
 }

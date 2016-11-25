@@ -1,5 +1,7 @@
 package scheduler;
 
+import java.util.Objects;
+
 /**
  * Created by kevin on 11/12/16.
  * Modified by Isaak on 11/12/16.
@@ -87,4 +89,37 @@ public class Time
 	{
 		return days;
 	}
+
+    @Override
+    public boolean equals(Object other)
+    {
+        Time otherTime = (Time)other;
+
+        if (otherTime.getTimeStart() != getTimeStart())
+            return false;
+
+        if (otherTime.getTimeEnd() != getTimeEnd())
+            return false;
+
+        if (otherTime.getYear() != getYear())
+            return false;
+
+        if (!otherTime.getTerm().equals(getTerm()))
+            return false;
+
+        if (!otherTime.getTermLength().equals(getTermLength()))
+            return false;
+
+        if (!otherTime.getDays().equals(getDays()))
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(getTimeStart(), getTimeEnd(), getYear(),
+                getTerm(), getTermLength(), getDays());
+    }
 }
