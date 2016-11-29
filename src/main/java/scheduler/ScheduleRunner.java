@@ -23,7 +23,33 @@ public class ScheduleRunner
     {
         // check if the user has a data directory
         Path dataDirectory = Paths.get(System.getProperty("user.home"), ".schedule_data");
-        Path csvDirectory = Paths.get(args[0]);
+        boolean reload = args.length == 2;
+
+        Path csvFile = null;
+        Path roomsFile = null;
+
+        // read user arguments
+        try
+        {
+            // read general and room CSV files
+            if (reload)
+            {
+                csvFile = Paths.get(args[0]);
+                roomsFile = Paths.get(args[1]);
+            }
+
+            // unless they are not provided
+            if (args.length != 0 || reload)
+            {
+                throw new IllegalArgumentException();
+            }
+        }
+        catch (IllegalArgumentException e)
+        {
+            System.err.println("Improper number of arguments: Expected 0 or 2, received " + args.length);
+            System.exit(1);
+        }
+
 
         // if the folder does not exist, create it
         if (!Files.exists(dataDirectory))
@@ -41,7 +67,9 @@ public class ScheduleRunner
             }
             catch (IOException e)
             {
+                System.err.println("Could not configure USER_HOME/.schedule_data");
                 e.printStackTrace();
+                System.exit(1);
             }
         }
 
@@ -49,7 +77,9 @@ public class ScheduleRunner
         try
         {
             Path logFile = Paths.get(dataDirectory.toString(), "schedule_operations.log");
-            Files.createFile(logFile);
+
+            if (!Files.exists(logFile))
+                Files.createFile(logFile);
 
             // print to designated log file
             FileHandler fh = new FileHandler(Paths.get(dataDirectory.toString(), "schedule_operations.log").toString());
@@ -60,25 +90,37 @@ public class ScheduleRunner
         }
         catch (IOException e)
         {
+            System.err.println("Could not configure logger");
             e.printStackTrace();
+            System.exit(1);
         }
 
-        // run the system
+        // load in information
         try
         {
-            // load in data from CSV
-            LOGGER.info("Loading system information from CSV");
-            DataLoad.loadGeneral(csvDirectory);
-
-            // update database
+            // connect to database
             LOGGER.info("Setting up database path");
             DataManager.setDBPath(dataDirectory);   // set path to database
 
             LOGGER.info("Setting up database connection in DataManager");
             DataManager.initConnection();           // set up database connection in DataManager
 
-            LOGGER.info("Updating database with system information");
-            DataManager.updateDatabase();           // update database with loaded data
+            // load in data from CSVs
+            if (reload)
+            {
+                LOGGER.info("Loading system information from CSV");
+                DataLoad.loadGeneral(csvFile);
+
+                LOGGER.info("Loading room information from CSV");
+                DataLoad.loadRooms(roomsFile);
+
+                // update database with loaded data
+                LOGGER.info("Updating database with system information");
+                DataManager.updateDatabase();
+            }
+            else
+                LOGGER.info("No CSVs to reload");
+
 
             LOGGER.info("Closing database connection in DataManager");
             DataManager.closeConnection();          // close connection to database in DataManager
