@@ -152,10 +152,10 @@ public class DataLoad
             if (crn != null)
             {
                 if (student != null)
-                    student.addSection(crn);
+                    students.get(bannerID).addSection(crn);
 
                 if (professor != null)
-                    professor.addSection(crn);
+                    professors.get(professorID).addSection(crn);
             }
         }
     }

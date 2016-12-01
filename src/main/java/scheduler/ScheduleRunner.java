@@ -39,7 +39,7 @@ public class ScheduleRunner
             }
 
             // unless they are not provided
-            if (args.length != 0 || reload)
+            if (!(args.length == 0 || reload))
             {
                 throw new IllegalArgumentException();
             }

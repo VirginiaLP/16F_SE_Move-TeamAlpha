@@ -1,0 +1,12 @@
+scheduler/Parser.class
+scheduler/Room.class
+scheduler/DataLoad.class
+scheduler/Time.class
+scheduler/Term.class
+scheduler/Section.class
+scheduler/Student.class
+scheduler/DataManager.class
+scheduler/DataInsert.class
+scheduler/TermLength.class
+scheduler/ScheduleRunner.class
+scheduler/Professor.class

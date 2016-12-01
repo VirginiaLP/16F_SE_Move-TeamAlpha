@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="287" failures="0" name="RunCukesTest" time="0.165" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.111-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/ubuntu/workspace"/>
+    <property name="java.runtime.version" value="1.8.0_111-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="~/.c9/local/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.2.0-c9"/>
+    <property name="user.home" value="/home/ubuntu"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="user.name" value="ubuntu"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-oracle/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_111"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="| 000876727 | Pauline |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0.001"/>
+  <testcase classname="| 000876727 | Pauline |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 000876727 | Pauline |" name="When I request the student with the banner ID 000876727" time="0"/>
+  <testcase classname="| 000876727 | Pauline |" name="And I ask for the student\&apos;s first name from the data loader" time="0"/>
+  <testcase classname="| 000876727 | Pauline |" name="Then I receive the string Pauline from the data loader" time="0.001"/>
+  <testcase classname="| 000876727 | Pauline |" name="| 000876727 | Pauline |" time="0.001"/>
+  <testcase classname="| 000384171 | Angel |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0"/>
+  <testcase classname="| 000384171 | Angel |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 000384171 | Angel |" name="When I request the student with the banner ID 000384171" time="0"/>
+  <testcase classname="| 000384171 | Angel |" name="And I ask for the student\&apos;s first name from the data loader" time="0"/>
+  <testcase classname="| 000384171 | Angel |" name="Then I receive the string Angel from the data loader" time="0"/>
+  <testcase classname="| 000384171 | Angel |" name="| 000384171 | Angel |" time="0"/>
+  <testcase classname="| 000800465 | Joanne |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0"/>
+  <testcase classname="| 000800465 | Joanne |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 000800465 | Joanne |" name="When I request the student with the banner ID 000800465" time="0"/>
+  <testcase classname="| 000800465 | Joanne |" name="And I ask for the student\&apos;s first name from the data loader" time="0"/>
+  <testcase classname="| 000800465 | Joanne |" name="Then I receive the string Joanne from the data loader" time="0"/>
+  <testcase classname="| 000800465 | Joanne |" name="| 000800465 | Joanne |" time="0"/>
+  <testcase classname="| 17123 | Dwayne |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0"/>
+  <testcase classname="| 17123 | Dwayne |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 17123 | Dwayne |" name="When I request the professor with the professor ID 17123" time="0"/>
+  <testcase classname="| 17123 | Dwayne |" name="And I ask for the professor\&apos;s first name from the data loader" time="0.001"/>
+  <testcase classname="| 17123 | Dwayne |" name="Then I receive the string Dwayne from the data loader" time="0"/>
+  <testcase classname="| 17123 | Dwayne |" name="| 17123 | Dwayne |" time="0"/>
+  <testcase classname="| 1831 | Deonna |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0"/>
+  <testcase classname="| 1831 | Deonna |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 1831 | Deonna |" name="When I request the professor with the professor ID 1831" time="0"/>
+  <testcase classname="| 1831 | Deonna |" name="And I ask for the professor\&apos;s first name from the data loader" time="0"/>
+  <testcase classname="| 1831 | Deonna |" name="Then I receive the string Deonna from the data loader" time="0"/>
+  <testcase classname="| 1831 | Deonna |" name="| 1831 | Deonna |" time="0.001"/>
+  <testcase classname="| 1523 | Paul |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0"/>
+  <testcase classname="| 1523 | Paul |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 1523 | Paul |" name="When I request the professor with the professor ID 1523" time="0"/>
+  <testcase classname="| 1523 | Paul |" name="And I ask for the professor\&apos;s first name from the data loader" time="0.001"/>
+  <testcase classname="| 1523 | Paul |" name="Then I receive the string Paul from the data loader" time="0"/>
+  <testcase classname="| 1523 | Paul |" name="| 1523 | Paul |" time="0"/>
+  <testcase classname="| 14037 | IT |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0"/>
+  <testcase classname="| 14037 | IT |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 14037 | IT |" name="When I request the section with the CRN 14037" time="0"/>
+  <testcase classname="| 14037 | IT |" name="And I ask for the section\&apos;s subject from the data loader" time="0"/>
+  <testcase classname="| 14037 | IT |" name="Then I receive the string IT from the data loader" time="0"/>
+  <testcase classname="| 14037 | IT |" name="| 14037 | IT |" time="0.001"/>
+  <testcase classname="| 14764 | CS |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0"/>
+  <testcase classname="| 14764 | CS |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 14764 | CS |" name="When I request the section with the CRN 14764" time="0"/>
+  <testcase classname="| 14764 | CS |" name="And I ask for the section\&apos;s subject from the data loader" time="0"/>
+  <testcase classname="| 14764 | CS |" name="Then I receive the string CS from the data loader" time="0"/>
+  <testcase classname="| 14764 | CS |" name="| 14764 | CS |" time="0"/>
+  <testcase classname="| 15030 | PEAC |" name="Given the file \&quot;data_load_test_1.csv\&quot; to load" time="0"/>
+  <testcase classname="| 15030 | PEAC |" name="And I load the file into the data loader" time="0"/>
+  <testcase classname="| 15030 | PEAC |" name="When I request the section with the CRN 15030" time="0"/>
+  <testcase classname="| 15030 | PEAC |" name="And I ask for the section\&apos;s subject from the data loader" time="0"/>
+  <testcase classname="| 15030 | PEAC |" name="Then I receive the string PEAC from the data loader" time="0"/>
+  <testcase classname="| 15030 | PEAC |" name="| 15030 | PEAC |" time="0.001"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0.001"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 1 of the file" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 2 of the file" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 3 of the file" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Given the file \&quot;parse_test_1.csv\&quot; to parse" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="When I request line 4 of the file" time="0"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Then I receive the string values:" time="0.002"/>
+  <testcase classname="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" name="Scenario: The parser successfully reads the lines in file \&quot;parse_test_1.csv\&quot;" time="0.002"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s first name" name="Given there is a professor with the first name \&quot;Brent\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s first name" name="When I ask for the professor\&apos;s first name" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s first name" name="Then I receive the string \&quot;Brent\&quot; from the professor" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s first name" name="Scenario: System asks for a professor\&apos;s first name" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s last name" name="Given there is a professor with the last name \&quot;Reeves\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s last name" name="When I ask for the professor\&apos;s last name" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s last name" name="Then I receive the string \&quot;Reeves\&quot; from the professor" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s last name" name="Scenario: System asks for a professor\&apos;s last name" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="Given there is a professor with the following sections:" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="When I ask for the professor\&apos;s sections" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="Then I receive this set from the professor:" time="0"/>
+  <testcase classname="Scenario: System asks for a professor\&apos;s sections" name="Scenario: System asks for a professor\&apos;s sections" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s building code" name="Given there is a room with the building code \&quot;MBB\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s building code" name="When I ask for the room\&apos;s building code" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s building code" name="Then I receive the string \&quot;MBB\&quot; from the room" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s building code" name="Scenario: System asks for a room\&apos;s building code" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s room number" name="Given there is a room with the room number \&quot;123\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s room number" name="When I ask for the room\&apos;s room number" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s room number" name="Then I receive the string \&quot;123\&quot; from the room" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s room number" name="Scenario: System asks for a room\&apos;s room number" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s max capacity" name="Given there is a room with the max capacity 34" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s max capacity" name="When I ask for the room\&apos;s max capacity" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s max capacity" name="Then I receive the integer 34 from the room" time="0"/>
+  <testcase classname="Scenario: System asks for a room\&apos;s max capacity" name="Scenario: System asks for a room\&apos;s max capacity" time="0.001"/>
+  <testcase classname="| MBB | MBB | 316 | 316 | are |" name="Given the first room has a building code \&quot;MBB\&quot;" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 316 | are |" name="And the second room has a building code \&quot;MBB\&quot;" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 316 | are |" name="And the first room has a room number of \&quot;316\&quot;" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 316 | are |" name="And the second room has a room number of \&quot;316\&quot;" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 316 | are |" name="When I ask if the rooms are equal" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 316 | are |" name="Then I am told that the rooms are equal" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 316 | are |" name="| MBB | MBB | 316 | 316 | are |" time="0.001"/>
+  <testcase classname="| MBB | MBB | 316 | 315 | are not |" name="Given the first room has a building code \&quot;MBB\&quot;" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 315 | are not |" name="And the second room has a building code \&quot;MBB\&quot;" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 315 | are not |" name="And the first room has a room number of \&quot;316\&quot;" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 315 | are not |" name="And the second room has a room number of \&quot;315\&quot;" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 315 | are not |" name="When I ask if the rooms are equal" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 315 | are not |" name="Then I am told that the rooms are not equal" time="0"/>
+  <testcase classname="| MBB | MBB | 316 | 315 | are not |" name="| MBB | MBB | 316 | 315 | are not |" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 316 | are not |" name="Given the first room has a building code \&quot;MBB\&quot;" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 316 | are not |" name="And the second room has a building code \&quot;ADM\&quot;" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 316 | are not |" name="And the first room has a room number of \&quot;316\&quot;" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 316 | are not |" name="And the second room has a room number of \&quot;316\&quot;" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 316 | are not |" name="When I ask if the rooms are equal" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 316 | are not |" name="Then I am told that the rooms are not equal" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 316 | are not |" name="| MBB | ADM | 316 | 316 | are not |" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 315 | are not |" name="Given the first room has a building code \&quot;MBB\&quot;" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 315 | are not |" name="And the second room has a building code \&quot;ADM\&quot;" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 315 | are not |" name="And the first room has a room number of \&quot;316\&quot;" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 315 | are not |" name="And the second room has a room number of \&quot;315\&quot;" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 315 | are not |" name="When I ask if the rooms are equal" time="0"/>
+  <testcase classname="| MBB | ADM | 316 | 315 | are not |" name="Then I am told that the rooms are not equal" time="0.001"/>
+  <testcase classname="| MBB | ADM | 316 | 315 | are not |" name="| MBB | ADM | 316 | 315 | are not |" time="0.001"/>
+  <testcase classname="Scenario: System asks for data about section subject" name="Given there is a section with the subject \&quot;CS\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for data about section subject" name="When I ask for the section\&apos;s subject" time="0"/>
+  <testcase classname="Scenario: System asks for data about section subject" name="Then I receive the string \&quot;CS\&quot; from the section" time="0.001"/>
+  <testcase classname="Scenario: System asks for data about section subject" name="Scenario: System asks for data about section subject" time="0.001"/>
+  <testcase classname="Scenario: System asks for data about section number" name="Given there is a section with the number \&quot;374\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for data about section number" name="When I ask for the section\&apos;s number" time="0"/>
+  <testcase classname="Scenario: System asks for data about section number" name="Then I receive the string \&quot;374\&quot; from the section" time="0"/>
+  <testcase classname="Scenario: System asks for data about section number" name="Scenario: System asks for data about section number" time="0"/>
+  <testcase classname="Scenario: System asks for data about section title" name="Given there is a section with the title \&quot;Software Engineering\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for data about section title" name="When I ask for the section\&apos;s title" time="0"/>
+  <testcase classname="Scenario: System asks for data about section title" name="Then I receive the string \&quot;Software Engineering\&quot; from the section" time="0"/>
+  <testcase classname="Scenario: System asks for data about section title" name="Scenario: System asks for data about section title" time="0"/>
+  <testcase classname="| 01 | 01 |" name="Given there is a section with the suffix \&quot;01\&quot;" time="0"/>
+  <testcase classname="| 01 | 01 |" name="When I ask for the section\&apos;s suffix" time="0"/>
+  <testcase classname="| 01 | 01 |" name="Then I receive the string \&quot;01\&quot; from the section" time="0"/>
+  <testcase classname="| 01 | 01 |" name="| 01 | 01 |" time="0"/>
+  <testcase classname="| H2 | H2 |" name="Given there is a section with the suffix \&quot;H2\&quot;" time="0"/>
+  <testcase classname="| H2 | H2 |" name="When I ask for the section\&apos;s suffix" time="0"/>
+  <testcase classname="| H2 | H2 |" name="Then I receive the string \&quot;H2\&quot; from the section" time="0"/>
+  <testcase classname="| H2 | H2 |" name="| H2 | H2 |" time="0"/>
+  <testcase classname="| 03 | 03 |" name="Given there is a section with the suffix \&quot;03\&quot;" time="0"/>
+  <testcase classname="| 03 | 03 |" name="When I ask for the section\&apos;s suffix" time="0"/>
+  <testcase classname="| 03 | 03 |" name="Then I receive the string \&quot;03\&quot; from the section" time="0"/>
+  <testcase classname="| 03 | 03 |" name="| 03 | 03 |" time="0"/>
+  <testcase classname="| 3 | 3 |" name="Given there is a section with the time-ID 3" time="0"/>
+  <testcase classname="| 3 | 3 |" name="When I ask for the section\&apos;s time-ID" time="0"/>
+  <testcase classname="| 3 | 3 |" name="Then I receive the integer 3 from the section" time="0"/>
+  <testcase classname="| 3 | 3 |" name="| 3 | 3 |" time="0"/>
+  <testcase classname="| 30 | 30 |" name="Given there is a section with the time-ID 30" time="0"/>
+  <testcase classname="| 30 | 30 |" name="When I ask for the section\&apos;s time-ID" time="0"/>
+  <testcase classname="| 30 | 30 |" name="Then I receive the integer 30 from the section" time="0"/>
+  <testcase classname="| 30 | 30 |" name="| 30 | 30 |" time="0"/>
+  <testcase classname="| 300 | 300 |" name="Given there is a section with the time-ID 300" time="0"/>
+  <testcase classname="| 300 | 300 |" name="When I ask for the section\&apos;s time-ID" time="0"/>
+  <testcase classname="| 300 | 300 |" name="Then I receive the integer 300 from the section" time="0"/>
+  <testcase classname="| 300 | 300 |" name="| 300 | 300 |" time="0"/>
+  <testcase classname="| 1 | 1 |" name="Given there is a section with the room-ID 1" time="0"/>
+  <testcase classname="| 1 | 1 |" name="When I ask for the section\&apos;s room-ID" time="0.001"/>
+  <testcase classname="| 1 | 1 |" name="Then I receive the integer 1 from the section" time="0"/>
+  <testcase classname="| 1 | 1 |" name="| 1 | 1 |" time="0"/>
+  <testcase classname="| 50 | 50 |" name="Given there is a section with the room-ID 50" time="0"/>
+  <testcase classname="| 50 | 50 |" name="When I ask for the section\&apos;s room-ID" time="0"/>
+  <testcase classname="| 50 | 50 |" name="Then I receive the integer 50 from the section" time="0"/>
+  <testcase classname="| 50 | 50 |" name="| 50 | 50 |" time="0"/>
+  <testcase classname="| 100 | 100 |" name="Given there is a section with the room-ID 100" time="0"/>
+  <testcase classname="| 100 | 100 |" name="When I ask for the section\&apos;s room-ID" time="0"/>
+  <testcase classname="| 100 | 100 |" name="Then I receive the integer 100 from the section" time="0"/>
+  <testcase classname="| 100 | 100 |" name="| 100 | 100 |" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Given there is a student with the first name \&quot;Bubba\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="When I ask for the student\&apos;s first name" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Then I receive the string \&quot;Bubba\&quot; from the student" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s first name" name="Scenario: System asks for a student\&apos;s first name" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s last name" name="Given there is a student with the last name \&quot;Blinkendorf\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s last name" name="When I ask for the student\&apos;s last name" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s last name" name="Then I receive the string \&quot;Blinkendorf\&quot; from the student" time="0.001"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s last name" name="Scenario: System asks for a student\&apos;s last name" time="0.001"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s classification" name="Given there is a student with the classification \&quot;SR\&quot;" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s classification" name="When I ask for the student\&apos;s classification" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s classification" name="Then I recieve the string \&quot;SR\&quot; from the student" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s classification" name="Scenario: System asks for a student\&apos;s classification" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s sections" name="Given there is a student with the following sections:" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s sections" name="When I ask for the student\&apos;s sections" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s sections" name="Then I receive this set from the student:" time="0"/>
+  <testcase classname="Scenario: System asks for a student\&apos;s sections" name="Scenario: System asks for a student\&apos;s sections" time="0"/>
+  <testcase classname="| 1200 | 1200 |" name="Given there is a time with the start-time 1200" time="0"/>
+  <testcase classname="| 1200 | 1200 |" name="When I ask for the time\&apos;s start-time" time="0"/>
+  <testcase classname="| 1200 | 1200 |" name="Then I receive the integer 1200 from the time" time="0"/>
+  <testcase classname="| 1200 | 1200 |" name="| 1200 | 1200 |" time="0.001"/>
+  <testcase classname="| 1300 | 1300 |" name="Given there is a time with the start-time 1300" time="0"/>
+  <testcase classname="| 1300 | 1300 |" name="When I ask for the time\&apos;s start-time" time="0"/>
+  <testcase classname="| 1300 | 1300 |" name="Then I receive the integer 1300 from the time" time="0"/>
+  <testcase classname="| 1300 | 1300 |" name="| 1300 | 1300 |" time="0"/>
+  <testcase classname="| 1330 | 1330 |" name="Given there is a time with the start-time 1330" time="0"/>
+  <testcase classname="| 1330 | 1330 |" name="When I ask for the time\&apos;s start-time" time="0"/>
+  <testcase classname="| 1330 | 1330 |" name="Then I receive the integer 1330 from the time" time="0"/>
+  <testcase classname="| 1330 | 1330 |" name="| 1330 | 1330 |" time="0"/>
+  <testcase classname="| 1200 | 1200 |" name="Given there is a time with the end-time 1200" time="0"/>
+  <testcase classname="| 1200 | 1200 |" name="When I ask for the time\&apos;s end-time" time="0"/>
+  <testcase classname="| 1200 | 1200 |" name="Then I receive the integer 1200 from the time" time="0"/>
+  <testcase classname="| 1200 | 1200 |" name="| 1200 | 1200 |" time="0"/>
+  <testcase classname="| 1300 | 1300 |" name="Given there is a time with the end-time 1300" time="0"/>
+  <testcase classname="| 1300 | 1300 |" name="When I ask for the time\&apos;s end-time" time="0"/>
+  <testcase classname="| 1300 | 1300 |" name="Then I receive the integer 1300 from the time" time="0"/>
+  <testcase classname="| 1300 | 1300 |" name="| 1300 | 1300 |" time="0"/>
+  <testcase classname="| 1330 | 1330 |" name="Given there is a time with the end-time 1330" time="0"/>
+  <testcase classname="| 1330 | 1330 |" name="When I ask for the time\&apos;s end-time" time="0"/>
+  <testcase classname="| 1330 | 1330 |" name="Then I receive the integer 1330 from the time" time="0"/>
+  <testcase classname="| 1330 | 1330 |" name="| 1330 | 1330 |" time="0"/>
+  <testcase classname="| 1906 | 1906 |" name="Given there is a time with the year 1906" time="0"/>
+  <testcase classname="| 1906 | 1906 |" name="When I ask for the time\&apos;s year" time="0"/>
+  <testcase classname="| 1906 | 1906 |" name="Then I receive the integer 1906 from the time" time="0"/>
+  <testcase classname="| 1906 | 1906 |" name="| 1906 | 1906 |" time="0"/>
+  <testcase classname="| 1999 | 1999 |" name="Given there is a time with the year 1999" time="0"/>
+  <testcase classname="| 1999 | 1999 |" name="When I ask for the time\&apos;s year" time="0"/>
+  <testcase classname="| 1999 | 1999 |" name="Then I receive the integer 1999 from the time" time="0"/>
+  <testcase classname="| 1999 | 1999 |" name="| 1999 | 1999 |" time="0"/>
+  <testcase classname="| 2016 | 2016 |" name="Given there is a time with the year 2016" time="0"/>
+  <testcase classname="| 2016 | 2016 |" name="When I ask for the time\&apos;s year" time="0"/>
+  <testcase classname="| 2016 | 2016 |" name="Then I receive the integer 2016 from the time" time="0"/>
+  <testcase classname="| 2016 | 2016 |" name="| 2016 | 2016 |" time="0"/>
+  <testcase classname="| 2020 | 2020 |" name="Given there is a time with the year 2020" time="0"/>
+  <testcase classname="| 2020 | 2020 |" name="When I ask for the time\&apos;s year" time="0"/>
+  <testcase classname="| 2020 | 2020 |" name="Then I receive the integer 2020 from the time" time="0"/>
+  <testcase classname="| 2020 | 2020 |" name="| 2020 | 2020 |" time="0"/>
+  <testcase classname="| 3000 | 3000 |" name="Given there is a time with the year 3000" time="0"/>
+  <testcase classname="| 3000 | 3000 |" name="When I ask for the time\&apos;s year" time="0"/>
+  <testcase classname="| 3000 | 3000 |" name="Then I receive the integer 3000 from the time" time="0"/>
+  <testcase classname="| 3000 | 3000 |" name="| 3000 | 3000 |" time="0"/>
+  <testcase classname="| FALL | FALL |" name="Given there is a time with the term FALL" time="0.138"/>
+  <testcase classname="| FALL | FALL |" name="When I ask for the time\&apos;s term" time="0.001"/>
+  <testcase classname="| FALL | FALL |" name="Then I receive the term FALL from the time" time="0"/>
+  <testcase classname="| FALL | FALL |" name="| FALL | FALL |" time="0"/>
+  <testcase classname="| SUMMER | SUMMER |" name="Given there is a time with the term SUMMER" time="0"/>
+  <testcase classname="| SUMMER | SUMMER |" name="When I ask for the time\&apos;s term" time="0"/>
+  <testcase classname="| SUMMER | SUMMER |" name="Then I receive the term SUMMER from the time" time="0"/>
+  <testcase classname="| SUMMER | SUMMER |" name="| SUMMER | SUMMER |" time="0"/>
+  <testcase classname="| SPRING | SPRING |" name="Given there is a time with the term SPRING" time="0"/>
+  <testcase classname="| SPRING | SPRING |" name="When I ask for the time\&apos;s term" time="0"/>
+  <testcase classname="| SPRING | SPRING |" name="Then I receive the term SPRING from the time" time="0"/>
+  <testcase classname="| SPRING | SPRING |" name="| SPRING | SPRING |" time="0"/>
+  <testcase classname="| SESSION_III_EXTENDED_COURSE | SESSION_III_EXTENDED_COURSE |" name="Given there is a time with the term-length SESSION_III_EXTENDED_COURSE" time="0"/>
+  <testcase classname="| SESSION_III_EXTENDED_COURSE | SESSION_III_EXTENDED_COURSE |" name="When I ask for the time\&apos;s term-length" time="0"/>
+  <testcase classname="| SESSION_III_EXTENDED_COURSE | SESSION_III_EXTENDED_COURSE |" name="Then I receive the term-length SESSION_III_EXTENDED_COURSE from the time" time="0"/>
+  <testcase classname="| SESSION_III_EXTENDED_COURSE | SESSION_III_EXTENDED_COURSE |" name="| SESSION_III_EXTENDED_COURSE | SESSION_III_EXTENDED_COURSE |" time="0"/>
+  <testcase classname="| SESSION_I | SESSION_I |" name="Given there is a time with the term-length SESSION_I" time="0"/>
+  <testcase classname="| SESSION_I | SESSION_I |" name="When I ask for the time\&apos;s term-length" time="0"/>
+  <testcase classname="| SESSION_I | SESSION_I |" name="Then I receive the term-length SESSION_I from the time" time="0"/>
+  <testcase classname="| SESSION_I | SESSION_I |" name="| SESSION_I | SESSION_I |" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_2 | ACU_WORLDWIDE_SESSION_2 |" name="Given there is a time with the term-length ACU_WORLDWIDE_SESSION_2" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_2 | ACU_WORLDWIDE_SESSION_2 |" name="When I ask for the time\&apos;s term-length" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_2 | ACU_WORLDWIDE_SESSION_2 |" name="Then I receive the term-length ACU_WORLDWIDE_SESSION_2 from the time" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_2 | ACU_WORLDWIDE_SESSION_2 |" name="| ACU_WORLDWIDE_SESSION_2 | ACU_WORLDWIDE_SESSION_2 |" time="0"/>
+  <testcase classname="| FULL_TERM | FULL_TERM |" name="Given there is a time with the term-length FULL_TERM" time="0"/>
+  <testcase classname="| FULL_TERM | FULL_TERM |" name="When I ask for the time\&apos;s term-length" time="0"/>
+  <testcase classname="| FULL_TERM | FULL_TERM |" name="Then I receive the term-length FULL_TERM from the time" time="0"/>
+  <testcase classname="| FULL_TERM | FULL_TERM |" name="| FULL_TERM | FULL_TERM |" time="0"/>
+  <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="Given there is a time with the term-length JANUARY_INTENSIVE_COURSE" time="0"/>
+  <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="When I ask for the time\&apos;s term-length" time="0"/>
+  <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="Then I receive the term-length JANUARY_INTENSIVE_COURSE from the time" time="0"/>
+  <testcase classname="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" name="| JANUARY_INTENSIVE_COURSE | JANUARY_INTENSIVE_COURSE |" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="Given there is a time with the term-length ACU_WORLDWIDE_SESSION_1" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="When I ask for the time\&apos;s term-length" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="Then I receive the term-length ACU_WORLDWIDE_SESSION_1 from the time" time="0"/>
+  <testcase classname="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" name="| ACU_WORLDWIDE_SESSION_1 | ACU_WORLDWIDE_SESSION_1 |" time="0.001"/>
+  <testcase classname="| SESSION_I | SESSION_I |" name="Given there is a time with the term-length SESSION_I" time="0"/>
+  <testcase classname="| SESSION_I | SESSION_I |" name="When I ask for the time\&apos;s term-length" time="0"/>
+  <testcase classname="| SESSION_I | SESSION_I |" name="Then I receive the term-length SESSION_I from the time" time="0"/>
+  <testcase classname="| SESSION_I | SESSION_I |" name="| SESSION_I | SESSION_I |" time="0"/>
+  <testcase classname="| SESSION_IV | SESSION_IV |" name="Given there is a time with the term-length SESSION_IV" time="0"/>
+  <testcase classname="| SESSION_IV | SESSION_IV |" name="When I ask for the time\&apos;s term-length" time="0"/>
+  <testcase classname="| SESSION_IV | SESSION_IV |" name="Then I receive the term-length SESSION_IV from the time" time="0"/>
+  <testcase classname="| SESSION_IV | SESSION_IV |" name="| SESSION_IV | SESSION_IV |" time="0.001"/>
+  <testcase classname="| MWF | MWF |" name="Given there is a time with the days MWF" time="0"/>
+  <testcase classname="| MWF | MWF |" name="When I ask for the time\&apos;s days" time="0"/>
+  <testcase classname="| MWF | MWF |" name="Then I receive the string \&quot;MWF\&quot; from the time" time="0"/>
+  <testcase classname="| MWF | MWF |" name="| MWF | MWF |" time="0"/>
+  <testcase classname="| TR | TR |" name="Given there is a time with the days TR" time="0"/>
+  <testcase classname="| TR | TR |" name="When I ask for the time\&apos;s days" time="0.001"/>
+  <testcase classname="| TR | TR |" name="Then I receive the string \&quot;TR\&quot; from the time" time="0"/>
+  <testcase classname="| TR | TR |" name="| TR | TR |" time="0"/>
+  <testcase classname="| MW | MW |" name="Given there is a time with the days MW" time="0"/>
+  <testcase classname="| MW | MW |" name="When I ask for the time\&apos;s days" time="0"/>
+  <testcase classname="| MW | MW |" name="Then I receive the string \&quot;MW\&quot; from the time" time="0"/>
+  <testcase classname="| MW | MW |" name="| MW | MW |" time="0"/>
+  <testcase classname="| MTWRFSU | MTWRFSU |" name="Given there is a time with the days MTWRFSU" time="0"/>
+  <testcase classname="| MTWRFSU | MTWRFSU |" name="When I ask for the time\&apos;s days" time="0"/>
+  <testcase classname="| MTWRFSU | MTWRFSU |" name="Then I receive the string \&quot;MTWRFSU\&quot; from the time" time="0"/>
+  <testcase classname="| MTWRFSU | MTWRFSU |" name="| MTWRFSU | MTWRFSU |" time="0"/>
+</testsuite>

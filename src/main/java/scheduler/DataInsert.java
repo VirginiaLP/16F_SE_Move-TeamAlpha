@@ -83,13 +83,13 @@ public class DataInsert
             int timeStart = timeMap.get(timeID).getTimeStart();
             int timeEnd = timeMap.get(timeID).getTimeEnd();
             int year = timeMap.get(timeID).getYear();
+            String days = timeMap.get(timeID).getDays();
             String term = timeMap.get(timeID).getTerm().name();
             String termLength = timeMap.get(timeID).getTermLength().name();
-            String days = timeMap.get(timeID).getDays();
 
             // create prepared SQL update query
             String insertRoom = "INSERT INTO Time " +
-                    "(time_id, start_time, end_time, days, class_year, term, term_length) VALUES " +
+                    "(time_id, start_time, end_time, class_year, days, term, term_length) VALUES " +
                     "(?, ?, ?, ?, ?, ?, ?);";
 
             stmt = conn.prepareStatement(insertRoom);
@@ -97,9 +97,9 @@ public class DataInsert
             stmt.setInt(2, timeStart);
             stmt.setInt(3, timeEnd);
             stmt.setInt(4, year);
-            stmt.setString(5, term);
-            stmt.setString(6, termLength);
-            stmt.setString(7, days);
+            stmt.setString(5, days);
+            stmt.setString(6, term);
+            stmt.setString(7, termLength);
 
             totalAffected += stmt.executeUpdate();
         }
@@ -215,7 +215,7 @@ public class DataInsert
 
                 totalAffected += stmt.executeUpdate();
             }
-        }
+        } // 000474442 - the banner ID of a sample student.
 
         stmt.close();
         return totalAffected;
