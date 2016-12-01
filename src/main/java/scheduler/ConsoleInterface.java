@@ -43,7 +43,7 @@ public class ConsoleInterface
                 System.out.println("\tLooking to move: " + crn);
 
                 // query for data
-				DataManager.getAlternatives(crn)
+				//DataManager.getAlternatives(crn);
             }
 			
 			else if (tokens[0].toUpperCase().equals("INFO"))
@@ -87,7 +87,7 @@ public class ConsoleInterface
         System.out.println("\nGeneral Commands");
         System.out.println("'EXIT'\t\texits application'");
         System.out.println("'HELP'\t\trequest this help page");
-		System.out.println("'INFO'\t\trequest the information page")
+		System.out.println("'INFO'\t\trequest the information page");
 	}
 
     public static void showError(String errorDesc)
