@@ -138,8 +138,8 @@ public class ScheduleRunner
         // identify user's home directory
         Path dataDirectory = Paths.get(System.getProperty("user.home") + "\\.schedule_data\\");
 
-        // make folder hidden by Windows system
-        Files.setAttribute(dataDirectory, "dos:hidden", true);
+        // make folder hidden by Windows system - this causes an error for an unknown reason	
+        // Files.setAttribute(dataDirectory, "dos:hidden", true);
 
         // create the data directory
         Files.createDirectory(dataDirectory);
