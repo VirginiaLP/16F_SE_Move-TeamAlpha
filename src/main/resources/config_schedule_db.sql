@@ -1,3 +1,4 @@
+/* Set Up Schema */
 DROP TABLE IF EXISTS Student;
 CREATE TABLE Student(
     banner_id   INTEGER,
@@ -67,3 +68,11 @@ CREATE TABLE Room (
 	max_capacity	INTEGER,
 	    PRIMARY KEY(room_id));
 
+/* Create Indices */
+CREATE INDEX index_time_values ON Time(start_time, end_time);
+CREATE INDEX index_time_days ON Time(days);
+CREATE UNIQUE INDEX index_time_id ON Time(time_id);
+CREATE UNIQUE INDEX index_room_id ON Room(room_id);
+CREATE UNIQUE INDEX index_banner_id ON Student(banner_id);
+CREATE UNIQUE INDEX index_professor_id ON Professor(professor_id);
+CREATE UNIQUE INDEX index_crn ON Section(crn);

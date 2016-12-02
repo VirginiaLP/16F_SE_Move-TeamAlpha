@@ -17,7 +17,11 @@ public class ConsoleInterface
     {
         boolean run = true;
         Scanner scan = new Scanner(System.in);
-
+        
+        // greet the user
+        showInfo();
+        showHelp();
+        
         while (run) {
             String input = "";
 
@@ -98,14 +102,14 @@ public class ConsoleInterface
     public static void showHelp()
     {
 		// Print out program instructions and all possible commands.
-        System.out.println("\nOur system allows the user to input a section of a " + 
-		"class that they wish to move to a different time. The program tells them "+
-		"what times would be best for the students in the class prioritizing by classification.");
+        System.out.println("The Scheduler System allows the user to input the crn for a " + 
+		"class section that they wish to move to a different time. The program then lists "+
+		"the best options, prioritizing options that allow for the most class time.");
 
         System.out.println("\nBasic Query Syntax:");
         System.out.println("'MOVE [CRN]'");
 
-        System.out.println("\nGeneral Commands");
+        System.out.println("\nGeneral Commands:");
         System.out.println("'EXIT'\t\texits application'");
         System.out.println("'HELP'\t\trequest this help page");
 		System.out.println("'INFO'\t\trequest the information page");

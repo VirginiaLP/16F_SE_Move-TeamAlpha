@@ -89,9 +89,6 @@ public class DataManager
 
             LOGGER.info("Inserting Assign data into the database");
             DataInsert.insertAssigns(DataLoad.professors);
-
-            // close connection in DataInsert
-            DataInsert.closeConnection();
         }
         catch (SQLException e)
         {
