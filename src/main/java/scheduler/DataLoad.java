@@ -340,4 +340,3 @@ public class DataLoad
         return new Time(timeStart, timeEnd, year, sectionTerm, sectionTermLength, days);
     }
 }
-

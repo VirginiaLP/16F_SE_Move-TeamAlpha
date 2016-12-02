@@ -12,6 +12,8 @@ import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by kevin on 11/8/16.
@@ -144,7 +146,7 @@ public class DataManager
         }
     }
     
-    public static ResultSet getAlternatives(int crn) throws SQLException
+    public static List<String> getAlternatives(int crn) throws SQLException
     {
         // access database initialization file
         ClassLoader loader = DataManager.class.getClassLoader();
@@ -158,12 +160,11 @@ public class DataManager
             initScript += scan.nextLine() + "\n";
 
         scan.close();
-        
-        System.out.println(initScript);
-        
+       
         // run the query
         PreparedStatement stmt = null;
         ResultSet rs = null;
+        List<String> records = new ArrayList<String>();
 
         try
         {
@@ -177,10 +178,49 @@ public class DataManager
             stmt.setInt(4, crn);
             
             rs = stmt.executeQuery();
+            
+            int sameOptionCount = 0;
+                    
+            int startTimeRecord = 0;
+            int endTimeRecord = 0;
+            String daysRecord = "";
+            
+            while (rs.next())
+            {
+                int startTime = rs.getInt("ValidTime.vt_start_time");
+                int endTime = rs.getInt("ValidTime.vt_end_time");
+                String days = rs.getString("ValidTime.vt_days");
+                
+                if (startTime == startTimeRecord && endTime == endTimeRecord && days.equals(daysRecord))
+                    sameOptionCount++;
+                else
+                {
+                    // reset record
+                    startTimeRecord = startTime;
+                    endTimeRecord = endTime;
+                    daysRecord = days;
+                    
+                    // reset sameOptionCount
+                    sameOptionCount = 0;
+                }
+                
+                if (sameOptionCount < 3)
+                {
+                    String record = "";
+                    
+                    record += (startTime + "\t");
+                    record += (endTime + "\t");
+                    record += (days + "\t");
+                    record += (rs.getString("ValidRoom.vr_building_code") + "\t");
+                    record += (rs.getString("ValidRoom.vr_room_number") + "\t");
+                    
+                    records.add(record);
+                }
+            }
         }
         catch (SQLException e)
         {
-            LOGGER.log(Level.SEVERE, "ResultSet could not be retrieved", e);
+            LOGGER.log(Level.SEVERE, "ResultSet could not be processed", e);
         }
         finally
         {
@@ -188,6 +228,6 @@ public class DataManager
                 stmt.close();
         }
         
-        return rs;
+        return records;
     }
 }
