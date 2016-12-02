@@ -5,21 +5,22 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import static org.junit.Assert.*;
-import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.List;
 
 public class ParserSteps
 {
     static String row;
-    static File file;
+    static Path file;
     static String[] tokens;
 
     @Given("^the file \"([^\"]*)\" to parse$")
     public void theFileToParse(String fileName) throws Throwable
     {
         ClassLoader classLoader = getClass().getClassLoader();
-        file = new File(classLoader.getResource(fileName).getFile());
+        file = Paths.get(classLoader.getResource(fileName).toURI());
     }
 
     @When("^I request line (\\d+) of the file$")
