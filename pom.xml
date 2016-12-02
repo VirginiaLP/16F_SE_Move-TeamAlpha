@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>alpha.team</groupId>
-    <version>0.1</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     <name>Team Alpha Academic Scheduling Manager</name>
     <artifactId>scheduler</artifactId>
