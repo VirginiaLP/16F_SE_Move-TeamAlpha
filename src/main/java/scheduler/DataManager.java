@@ -3,9 +3,11 @@ package scheduler;
 import java.io.InputStream;
 import java.nio.file.Path;
 import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -140,5 +142,52 @@ public class DataManager
         {
             e.printStackTrace();
         }
+    }
+    
+    public static ResultSet getAlternatives(int crn) throws SQLException
+    {
+        // access database initialization file
+        ClassLoader loader = DataManager.class.getClassLoader();
+        InputStream initScriptStream = loader.getResourceAsStream("schedule_query_1.sql");
+        String initScript = "";
+
+        // store the SQL script in a string
+        Scanner scan = new Scanner(initScriptStream);
+
+        while (scan.hasNextLine())
+            initScript += scan.nextLine() + "\n";
+
+        scan.close();
+        
+        System.out.println(initScript);
+        
+        // run the query
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try
+        {
+            stmt = conn.prepareStatement(initScript,
+                    ResultSet.TYPE_FORWARD_ONLY, 
+                    ResultSet.CONCUR_READ_ONLY);
+            
+            stmt.setInt(1, crn);
+            stmt.setInt(2, crn);
+            stmt.setInt(3, crn);
+            stmt.setInt(4, crn);
+            
+            rs = stmt.executeQuery();
+        }
+        catch (SQLException e)
+        {
+            LOGGER.log(Level.SEVERE, "ResultSet could not be retrieved", e);
+        }
+        finally
+        {
+            if (stmt != null)
+                stmt.close();
+        }
+        
+        return rs;
     }
 }

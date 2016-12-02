@@ -120,8 +120,10 @@ public class ScheduleRunner
             }
             else
                 LOGGER.info("No CSVs to reload");
-
-
+            
+            // begin user session
+            ConsoleInterface.start();
+            
             LOGGER.info("Closing database connection in DataManager");
             DataManager.closeConnection();          // close connection to database in DataManager
         }
