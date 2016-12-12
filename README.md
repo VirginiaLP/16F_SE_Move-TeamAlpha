@@ -54,3 +54,8 @@ class to be moved to.
 
 CRN can accept values, such as `10908`, `10001`, and `14812`. Any other 
 non-integer values that the user may enter will be ignored.  
+
+**Team Members**
+* Kevin Shurtz
+* Isaak Ramirez
+* Virginia Pettit
